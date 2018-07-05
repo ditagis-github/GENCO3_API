@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace WEB_API.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ValuesController : ApiController
     {
         // GET api/values
@@ -19,7 +19,9 @@ namespace WEB_API.Controllers
         // GET api/values/5
         public string Get(int id)
         {
-            return "value";
+            ServiceReference1.WebServiceGISSoapClient a = new ServiceReference1.WebServiceGISSoapClient();
+            return a.getCeMSVT2_CO2_S1("0") + "";
+            //return "value";
         }
 
         // POST api/values
