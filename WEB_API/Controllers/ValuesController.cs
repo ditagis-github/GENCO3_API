@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using DataProvider;
 
 namespace WEB_API.Controllers
 {
@@ -17,10 +18,10 @@ namespace WEB_API.Controllers
         }
 
         // GET api/values/5
-        public string Get(int id)
+        public Double Get(int id)
         {
-            ServiceReference1.WebServiceGISSoapClient a = new ServiceReference1.WebServiceGISSoapClient();
-            return a.getCeMSVT2_CO2_S1("0") + "";
+            CongSuatNhaMayDAO congSuatNhaMayDAO = new CongSuatNhaMayDAO();
+            return congSuatNhaMayDAO.getPM1_GT11();
             //return "value";
         }
 
