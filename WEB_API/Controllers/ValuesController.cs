@@ -21,10 +21,15 @@ namespace WEB_API.Controllers
         public Double Get(int id)
         {
             CongSuatNhaMayDAO congSuatNhaMayDAO = new CongSuatNhaMayDAO();
-            return congSuatNhaMayDAO.getPM1_GT11();
+            return congSuatNhaMayDAO.GetBuonKuop_H1();
             //return "value";
         }
-
+        public Double GetBuonKuop_H2()
+        {
+            CongSuatNhaMayDAO congSuatNhaMayDAO = new CongSuatNhaMayDAO();
+            return congSuatNhaMayDAO.GetBuonKuop_H2();
+            //return "value";
+        }
         // POST api/values
         public void Post([FromBody]string value)
         {

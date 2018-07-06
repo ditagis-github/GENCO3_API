@@ -14,6 +14,9 @@ namespace WEB_API
         {
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
+            EnableCorsAttribute cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
+
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
