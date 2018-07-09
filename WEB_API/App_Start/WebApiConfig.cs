@@ -7,6 +7,7 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using WebAPI;
 
 namespace WEB_API
 {
@@ -21,6 +22,8 @@ namespace WEB_API
 
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+
+            config.MessageHandlers.Add(new TokenValidationHandler());
 
             // Web API routes
             config.MapHttpAttributeRoutes();

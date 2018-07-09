@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Genco3_SystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SYS_Account">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserCreate" Type="bigint" />
+          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="Expired" Type="datetime" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Genco3_System.dbo.SYS_Capability' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SYS_Capability">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Genco3_System.dbo.SYS_Capability_Account' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SYS_Capability_Account">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Account" />
+            <PropertyRef Name="Capability" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Account" Type="bigint" Nullable="false" />
+          <Property Name="Capability" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsPrimary" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Genco3_System.dbo.SYS_Capability_Role' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SYS_Capability_Role">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Role" />
+            <PropertyRef Name="Capability" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Capability" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsPrimary" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Genco3_System.dbo.SYS_GroupLayer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SYS_GroupLayer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'Genco3_System.dbo.SYS_GroupRole' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="SYS_GroupRole">
+          <Property Name="ID" Type="varchar" MaxLength="10" />
+          <Property Name="Name" Type="nvarchar" MaxLength="155" />
+        </EntityType>-->
+        <EntityType Name="SYS_Layer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Url" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="GroupID" Type="varchar" MaxLength="20" />
+          <Property Name="NumericalOder" Type="int" />
+        </EntityType>
+        <EntityType Name="SYS_Layer_Account">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Account" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Layer" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="IsCreate" Type="bit" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="IsEdit" Type="bit" />
+          <Property Name="IsView" Type="bit" />
+          <Property Name="OutFields" Type="varchar" MaxLength="1000" />
+          <Property Name="Definition" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Genco3_System.dbo.SYS_Layer_Role' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SYS_Layer_Role">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Layer" />
+            <PropertyRef Name="Role" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="Layer" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Role" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="IsEdit" Type="bit" />
+          <Property Name="IsDelete" Type="bit" />
+          <Property Name="IsView" Type="bit" />
+          <Property Name="IsCreate" Type="bit" />
+          <Property Name="OutFields" Type="varchar" MaxLength="1000" />
+          <Property Name="Definition" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Genco3_System.dbo.SYS_Logger_Capability' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SYS_Logger_Capability">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="TacVu" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TacVu" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="ThoiGian" Type="datetime2" Precision="7" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Genco3_System.dbo.SYS_Logger_Layer' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SYS_Logger_Layer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="TacVu" Type="nvarchar" MaxLength="1000" />
+          <Property Name="LopDuLieu" Type="varchar" MaxLength="255" />
+          <Property Name="ThuocTinh" Type="varchar" MaxLength="500" />
+          <Property Name="ThoiGian" Type="datetime2" Precision="7" />
+          <Property Name="Username" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Genco3_System.dbo.SYS_Role' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SYS_Role">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GroupRole" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Genco3_System.dbo.SYS_Role_Account' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="SYS_Role_Account">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="Account" Type="bigint" />
+          <Property Name="Role" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK_SYS_Layer_Account_SYS_Account">
+          <End Role="SYS_Account" Type="Self.SYS_Account" Multiplicity="1" />
+          <End Role="SYS_Layer_Account" Type="Self.SYS_Layer_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="SYS_Layer_Account">
+              <PropertyRef Name="Account" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Layer_Account_SYS_Layer">
+          <End Role="SYS_Layer" Type="Self.SYS_Layer" Multiplicity="1" />
+          <End Role="SYS_Layer_Account" Type="Self.SYS_Layer_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Layer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Layer_Account">
+              <PropertyRef Name="Layer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Genco3_SystemModelStoreContainer">
+          <EntitySet Name="SYS_Account" EntityType="Self.SYS_Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYS_Layer" EntityType="Self.SYS_Layer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYS_Layer_Account" EntityType="Self.SYS_Layer_Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYS_Capability" EntityType="Self.SYS_Capability" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SYS_Capability].[ID] AS [ID], 
+    [SYS_Capability].[Name] AS [Name]
+    FROM [dbo].[SYS_Capability] AS [SYS_Capability]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SYS_Capability_Account" EntityType="Self.SYS_Capability_Account" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SYS_Capability_Account].[ID] AS [ID], 
+    [SYS_Capability_Account].[Account] AS [Account], 
+    [SYS_Capability_Account].[Capability] AS [Capability], 
+    [SYS_Capability_Account].[IsPrimary] AS [IsPrimary]
+    FROM [dbo].[SYS_Capability_Account] AS [SYS_Capability_Account]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SYS_Capability_Role" EntityType="Self.SYS_Capability_Role" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SYS_Capability_Role].[ID] AS [ID], 
+    [SYS_Capability_Role].[Role] AS [Role], 
+    [SYS_Capability_Role].[Capability] AS [Capability], 
+    [SYS_Capability_Role].[IsPrimary] AS [IsPrimary]
+    FROM [dbo].[SYS_Capability_Role] AS [SYS_Capability_Role]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SYS_GroupLayer" EntityType="Self.SYS_GroupLayer" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SYS_GroupLayer].[Id] AS [Id], 
+    [SYS_GroupLayer].[Name] AS [Name]
+    FROM [dbo].[SYS_GroupLayer] AS [SYS_GroupLayer]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SYS_Layer_Role" EntityType="Self.SYS_Layer_Role" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SYS_Layer_Role].[ID] AS [ID], 
+    [SYS_Layer_Role].[Layer] AS [Layer], 
+    [SYS_Layer_Role].[Role] AS [Role], 
+    [SYS_Layer_Role].[IsEdit] AS [IsEdit], 
+    [SYS_Layer_Role].[IsDelete] AS [IsDelete], 
+    [SYS_Layer_Role].[IsView] AS [IsView], 
+    [SYS_Layer_Role].[IsCreate] AS [IsCreate], 
+    [SYS_Layer_Role].[OutFields] AS [OutFields], 
+    [SYS_Layer_Role].[Definition] AS [Definition]
+    FROM [dbo].[SYS_Layer_Role] AS [SYS_Layer_Role]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SYS_Logger_Capability" EntityType="Self.SYS_Logger_Capability" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SYS_Logger_Capability].[ID] AS [ID], 
+    [SYS_Logger_Capability].[Username] AS [Username], 
+    [SYS_Logger_Capability].[TacVu] AS [TacVu], 
+    [SYS_Logger_Capability].[ThoiGian] AS [ThoiGian]
+    FROM [dbo].[SYS_Logger_Capability] AS [SYS_Logger_Capability]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SYS_Logger_Layer" EntityType="Self.SYS_Logger_Layer" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SYS_Logger_Layer].[ID] AS [ID], 
+    [SYS_Logger_Layer].[TacVu] AS [TacVu], 
+    [SYS_Logger_Layer].[LopDuLieu] AS [LopDuLieu], 
+    [SYS_Logger_Layer].[ThuocTinh] AS [ThuocTinh], 
+    [SYS_Logger_Layer].[ThoiGian] AS [ThoiGian], 
+    [SYS_Logger_Layer].[Username] AS [Username]
+    FROM [dbo].[SYS_Logger_Layer] AS [SYS_Logger_Layer]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SYS_Role" EntityType="Self.SYS_Role" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SYS_Role].[ID] AS [ID], 
+    [SYS_Role].[Name] AS [Name], 
+    [SYS_Role].[GroupRole] AS [GroupRole]
+    FROM [dbo].[SYS_Role] AS [SYS_Role]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SYS_Role_Account" EntityType="Self.SYS_Role_Account" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SYS_Role_Account].[ID] AS [ID], 
+    [SYS_Role_Account].[Account] AS [Account], 
+    [SYS_Role_Account].[Role] AS [Role]
+    FROM [dbo].[SYS_Role_Account] AS [SYS_Role_Account]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_SYS_Layer_Account_SYS_Account" Association="Self.FK_SYS_Layer_Account_SYS_Account">
+            <End Role="SYS_Account" EntitySet="SYS_Account" />
+            <End Role="SYS_Layer_Account" EntitySet="SYS_Layer_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Layer_Account_SYS_Layer" Association="Self.FK_SYS_Layer_Account_SYS_Layer">
+            <End Role="SYS_Layer" EntitySet="SYS_Layer" />
+            <End Role="SYS_Layer_Account" EntitySet="SYS_Layer_Account" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Genco3_SystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SYS_Account">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DisplayName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserCreate" Type="Int64" />
+          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="Expired" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Boolean" />
+          <NavigationProperty Name="SYS_Layer_Account" Relationship="Self.FK_SYS_Layer_Account_SYS_Account" FromRole="SYS_Account" ToRole="SYS_Layer_Account" />
+        </EntityType>
+        <EntityType Name="SYS_Layer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Url" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="GroupID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NumericalOder" Type="Int32" />
+          <NavigationProperty Name="SYS_Layer_Account" Relationship="Self.FK_SYS_Layer_Account_SYS_Layer" FromRole="SYS_Layer" ToRole="SYS_Layer_Account" />
+        </EntityType>
+        <EntityType Name="SYS_Layer_Account">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Layer" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsCreate" Type="Boolean" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="IsEdit" Type="Boolean" />
+          <Property Name="IsView" Type="Boolean" />
+          <Property Name="OutFields" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Definition" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SYS_Account" Relationship="Self.FK_SYS_Layer_Account_SYS_Account" FromRole="SYS_Layer_Account" ToRole="SYS_Account" />
+          <NavigationProperty Name="SYS_Layer" Relationship="Self.FK_SYS_Layer_Account_SYS_Layer" FromRole="SYS_Layer_Account" ToRole="SYS_Layer" />
+        </EntityType>
+        <EntityType Name="SYS_Capability">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SYS_Capability_Account">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Account" />
+            <PropertyRef Name="Capability" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Account" Type="Int64" Nullable="false" />
+          <Property Name="Capability" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsPrimary" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SYS_Capability_Role">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Role" />
+            <PropertyRef Name="Capability" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Capability" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsPrimary" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="SYS_GroupLayer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SYS_Layer_Role">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Layer" />
+            <PropertyRef Name="Role" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="Layer" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Role" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsEdit" Type="Boolean" />
+          <Property Name="IsDelete" Type="Boolean" />
+          <Property Name="IsView" Type="Boolean" />
+          <Property Name="IsCreate" Type="Boolean" />
+          <Property Name="OutFields" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Definition" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SYS_Logger_Capability">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="TacVu" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TacVu" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ThoiGian" Type="DateTime" Precision="7" />
+        </EntityType>
+        <EntityType Name="SYS_Logger_Layer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="TacVu" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="LopDuLieu" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ThuocTinh" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ThoiGian" Type="DateTime" Precision="7" />
+          <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SYS_Role">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="ID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GroupRole" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="SYS_Role_Account">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="Account" Type="Int64" />
+          <Property Name="Role" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_SYS_Layer_Account_SYS_Account">
+          <End Role="SYS_Account" Type="Self.SYS_Account" Multiplicity="1" />
+          <End Role="SYS_Layer_Account" Type="Self.SYS_Layer_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="SYS_Layer_Account">
+              <PropertyRef Name="Account" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Layer_Account_SYS_Layer">
+          <End Role="SYS_Layer" Type="Self.SYS_Layer" Multiplicity="1" />
+          <End Role="SYS_Layer_Account" Type="Self.SYS_Layer_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Layer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Layer_Account">
+              <PropertyRef Name="Layer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SYS_Account" EntityType="Self.SYS_Account" />
+          <EntitySet Name="SYS_Layer" EntityType="Self.SYS_Layer" />
+          <EntitySet Name="SYS_Layer_Account" EntityType="Self.SYS_Layer_Account" />
+          <EntitySet Name="SYS_Capability" EntityType="Self.SYS_Capability" />
+          <EntitySet Name="SYS_Capability_Account" EntityType="Self.SYS_Capability_Account" />
+          <EntitySet Name="SYS_Capability_Role" EntityType="Self.SYS_Capability_Role" />
+          <EntitySet Name="SYS_GroupLayer" EntityType="Self.SYS_GroupLayer" />
+          <EntitySet Name="SYS_Layer_Role" EntityType="Self.SYS_Layer_Role" />
+          <EntitySet Name="SYS_Logger_Capability" EntityType="Self.SYS_Logger_Capability" />
+          <EntitySet Name="SYS_Logger_Layer" EntityType="Self.SYS_Logger_Layer" />
+          <EntitySet Name="SYS_Role" EntityType="Self.SYS_Role" />
+          <EntitySet Name="SYS_Role_Account" EntityType="Self.SYS_Role_Account" />
+          <AssociationSet Name="FK_SYS_Layer_Account_SYS_Account" Association="Self.FK_SYS_Layer_Account_SYS_Account">
+            <End Role="SYS_Account" EntitySet="SYS_Account" />
+            <End Role="SYS_Layer_Account" EntitySet="SYS_Layer_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Layer_Account_SYS_Layer" Association="Self.FK_SYS_Layer_Account_SYS_Layer">
+            <End Role="SYS_Layer" EntitySet="SYS_Layer" />
+            <End Role="SYS_Layer_Account" EntitySet="SYS_Layer_Account" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Genco3_SystemModelStoreContainer" CdmEntityContainer="SystemEntities">
+          <EntitySetMapping Name="SYS_Account">
+            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Account">
+              <MappingFragment StoreEntitySet="SYS_Account">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="UserCreate" ColumnName="UserCreate" />
+                <ScalarProperty Name="DateCreate" ColumnName="DateCreate" />
+                <ScalarProperty Name="Expired" ColumnName="Expired" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_Layer">
+            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Layer">
+              <MappingFragment StoreEntitySet="SYS_Layer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="NumericalOder" ColumnName="NumericalOder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_Layer_Account">
+            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Layer_Account">
+              <MappingFragment StoreEntitySet="SYS_Layer_Account">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Layer" ColumnName="Layer" />
+                <ScalarProperty Name="IsCreate" ColumnName="IsCreate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="IsEdit" ColumnName="IsEdit" />
+                <ScalarProperty Name="IsView" ColumnName="IsView" />
+                <ScalarProperty Name="OutFields" ColumnName="OutFields" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_Capability">
+            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Capability">
+              <MappingFragment StoreEntitySet="SYS_Capability">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_Capability_Account">
+            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Capability_Account">
+              <MappingFragment StoreEntitySet="SYS_Capability_Account">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Capability" ColumnName="Capability" />
+                <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_Capability_Role">
+            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Capability_Role">
+              <MappingFragment StoreEntitySet="SYS_Capability_Role">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Capability" ColumnName="Capability" />
+                <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_GroupLayer">
+            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_GroupLayer">
+              <MappingFragment StoreEntitySet="SYS_GroupLayer">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_Layer_Role">
+            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Layer_Role">
+              <MappingFragment StoreEntitySet="SYS_Layer_Role">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Layer" ColumnName="Layer" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="IsEdit" ColumnName="IsEdit" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="IsView" ColumnName="IsView" />
+                <ScalarProperty Name="IsCreate" ColumnName="IsCreate" />
+                <ScalarProperty Name="OutFields" ColumnName="OutFields" />
+                <ScalarProperty Name="Definition" ColumnName="Definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_Logger_Capability">
+            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Logger_Capability">
+              <MappingFragment StoreEntitySet="SYS_Logger_Capability">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="TacVu" ColumnName="TacVu" />
+                <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_Logger_Layer">
+            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Logger_Layer">
+              <MappingFragment StoreEntitySet="SYS_Logger_Layer">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TacVu" ColumnName="TacVu" />
+                <ScalarProperty Name="LopDuLieu" ColumnName="LopDuLieu" />
+                <ScalarProperty Name="ThuocTinh" ColumnName="ThuocTinh" />
+                <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_Role">
+            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Role">
+              <MappingFragment StoreEntitySet="SYS_Role">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="GroupRole" ColumnName="GroupRole" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SYS_Role_Account">
+            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Role_Account">
+              <MappingFragment StoreEntitySet="SYS_Role_Account">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
