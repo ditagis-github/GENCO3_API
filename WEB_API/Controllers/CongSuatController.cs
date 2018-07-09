@@ -52,6 +52,12 @@ namespace WEB_API.Controllers
                 congSuatNhaMayDAO.GetPhuMy21_GT22() + congSuatNhaMayDAO.GetPhuMy21_ST23() + congSuatNhaMayDAO.GetPhuMy4_GT41() + congSuatNhaMayDAO.GetPhuMy4_GT42() +
                 congSuatNhaMayDAO.GetPhuMy4_ST43();
         }
+        [Route("vinhtan2_s1")]
+        [HttpGet]
+        public double GetCongSuatVinhTan1()
+        {
+            return congSuatNhaMayDAO.GetVinhTan2_S1();
+        }
         [Route("vinhtan")]
         [HttpGet]
         public double GetCongSuatVinhTan()
