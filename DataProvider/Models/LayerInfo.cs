@@ -18,5 +18,7 @@ namespace DataProvider.Models
         public string OutFields { get; set; }
         public string Definition { get; set; }
         public string Url { get; set; }
+        public string GroupID { get; set; }
+        public string GroupName { get; set; }
     }
 }

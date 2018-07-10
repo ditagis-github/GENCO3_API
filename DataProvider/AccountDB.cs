@@ -19,6 +19,7 @@ namespace DataProvider
                 {
                     var query = from la in context.SYS_Layer_Account
                                 join lyr in context.SYS_Layer on la.Layer equals lyr.ID
+                                join gr in context.SYS_GroupLayer on lyr.GroupID equals gr.Id
                                 where la.Account == account.Username
                                 orderby lyr.NumericalOder
                                 select new LayerInfo
@@ -31,7 +32,9 @@ namespace DataProvider
                                     IsEdit = la.IsEdit.HasValue?la.IsEdit.Value:false,
                                     Definition = la.Definition,
                                     Url = lyr.Url,
-                                    OutFields = la.OutFields
+                                    OutFields = la.OutFields,
+                                    GroupID = gr.Id,
+                                    GroupName = gr.Name
                                 };
 
                     return query.ToList();
