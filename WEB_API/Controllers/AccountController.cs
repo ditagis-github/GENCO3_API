@@ -76,7 +76,7 @@ namespace WebAPI.Controllers
             //create the jwt
             var token =
                 (JwtSecurityToken)
-                    tokenHandler.CreateJwtSecurityToken(issuer: "http://localhost:50191", audience: "http://localhost:50191",
+                    tokenHandler.CreateJwtSecurityToken(issuer: "http://genco3.ditagis.com", audience: "http://genco3.ditagis.com",
                         subject: claimsIdentity, notBefore: issuedAt, expires: expires, signingCredentials: signingCredentials);
             var tokenString = tokenHandler.WriteToken(token);
 

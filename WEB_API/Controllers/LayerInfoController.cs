@@ -32,5 +32,22 @@ namespace WebAPI.Controllers
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, e.Message);
             }
         }
+        [Route("abc")]
+        public HttpResponseMessage abc()
+        {
+            try
+            {
+                var result = context.LayerInfos(new DataProvider.EF.SYS_Account
+                {
+                    Username = "ditagis"
+                });
+                return Request.CreateResponse(HttpStatusCode.OK, result);
+            }
+            catch (Exception e)
+            {
+
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, e.Message);
+            }
+        }
     }
 }

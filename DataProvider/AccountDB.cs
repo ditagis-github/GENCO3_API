@@ -19,7 +19,8 @@ namespace DataProvider
                 {
                     var query = from la in context.SYS_Layer_Account
                                 join lyr in context.SYS_Layer on la.Layer equals lyr.ID
-                                join gr in context.SYS_GroupLayer on lyr.GroupID equals gr.Id
+                                join gr in context.SYS_GroupLayer on lyr.GroupID equals gr.Id into igr
+                                from gr in igr.DefaultIfEmpty()
                                 where la.Account == account.Username
                                 orderby lyr.NumericalOder
                                 select new LayerInfo
