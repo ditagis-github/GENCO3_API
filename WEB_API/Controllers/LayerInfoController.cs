@@ -15,31 +15,14 @@ namespace WebAPI.Controllers
     public class LayerInfoController: ApiController
     {
         private AccountDB context = new AccountDB();
-        [Route("{id}")]
-        public HttpResponseMessage Get(string id)
+        public HttpResponseMessage Get()
         {
             try
             {
+                var user = User.Identity;
                 var result = context.LayerInfos(new DataProvider.EF.SYS_Account
                 {
-                    Username = id
-                });
-                return Request.CreateResponse(HttpStatusCode.OK, result);
-            }
-            catch (Exception e)
-            {
-
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, e.Message);
-            }
-        }
-        [Route("abc")]
-        public HttpResponseMessage abc()
-        {
-            try
-            {
-                var result = context.LayerInfos(new DataProvider.EF.SYS_Account
-                {
-                    Username = "ditagis"
+                    Username = user.Name
                 });
                 return Request.CreateResponse(HttpStatusCode.OK, result);
             }
