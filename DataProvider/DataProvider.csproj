@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountDB.cs" />
+    <Compile Include="Camera.cs" />
     <Compile Include="CongSuatNhaMayDAO.cs" />
     <Compile Include="Constant.cs" />
     <Compile Include="Helper.cs" />
