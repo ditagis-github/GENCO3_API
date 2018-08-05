@@ -57,6 +57,7 @@
     <Compile Include="CongSuatNhaMayDAO.cs" />
     <Compile Include="Constant.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\LayerInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\ScadaWebService\Reference.cs">

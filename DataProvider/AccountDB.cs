@@ -66,5 +66,27 @@ namespace DataProvider
                 throw e;
             }
         }
+
+        public SYS_Account Profile(string username)
+        {
+            try
+            {
+                using (var context = new SystemEntities())
+                {
+                    var query = from f in context.SYS_Account
+                                where f.Username.Equals(username, StringComparison.OrdinalIgnoreCase)
+                                select new AccountModel
+                                {
+                                    Username = f.Username,
+                                    DisplayName = f.DisplayName
+                                };
+                    return query.FirstOrDefault();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }
