@@ -6,8 +6,7 @@ using System.Net.Http.Formatting;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using Microsoft.Owin.Security.OAuth;
-using Newtonsoft.Json.Serialization;
-using WebAPI;
+using Web_API;
 
 namespace WEB_API
 {

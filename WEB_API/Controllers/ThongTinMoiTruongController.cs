@@ -29,16 +29,7 @@ namespace WEB_API.Controllers
             return 0;
 
         }
-        [Route("test")]
-        [HttpGet]
-        public double test(String id)
-        {
-            Console.WriteLine(id);
-            if (id == "2")
-                return thongTinMoiTruongDAO.GetCeMSVT2_CO2_S1();
-            else return 0;
-        }
-        [Route("vinhtan2_s1")]
+        [Route("vinhtan2")]
         [HttpGet]
         public double GetThongTinMoiTruongVinhTan2_S1(String id)
         {
@@ -58,7 +49,7 @@ namespace WEB_API.Controllers
                 return thongTinMoiTruongDAO.GetCeMSVT2_Temp_S1();
             else return 0;
         }
-        [Route("vinhtan2_s2")]
+        [Route("vinhtan2")]
         [HttpGet]
         public double GetThongTinMoiTruongVinhTan2_S2(String id)
         {

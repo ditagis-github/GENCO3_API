@@ -520,7 +520,330 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="getCongSuat_PM3_GT31">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_PM3_GT31Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_PM3_GT31Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_PM3_GT32">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_PM3_GT32Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_PM3_GT32Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_PM3_ST33">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_PM3_ST33Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_PM3_ST33Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_PM22_TOTAL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_PM22_TOTALResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_PM22_TOTALResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_BR_GT1Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_BR_GT2Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_BR_GT3Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT4">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT4Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_BR_GT4Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT5">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT5Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_BR_GT5Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT6">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT6Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_BR_GT6Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT7">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT7Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_BR_GT7Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT8">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_GT8Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_BR_GT8Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_ST9">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_ST9Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_BR_ST9Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_ST10">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_BR_ST10Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_BR_ST10Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGAS_LH">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGAS_LHResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getGAS_LHResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGAS_DC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGAS_DCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getGAS_DCResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGAS_DC_FLOW">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getGAS_DC_FLOWResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getGAS_DC_FLOWResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_TB1_S1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_TB1_S1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_TB1_S1Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_TB1_S2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_TB1_S2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_TB1_S2Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_TB1_NGAY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_TB1_NGAYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCongSuat_TB1_NGAYResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_VT4_S1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_VT4_S1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_VT4_S1Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_VT4_S2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_VT4_S2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getCongSuat_VT4_S2Result" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_VT4_NGAY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCongSuat_VT4_NGAYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCongSuat_VT4_NGAYResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="double" type="s:double" />
+      <s:element name="string" nillable="true" type="s:string" />
     </s:schema>
   </wsdl:types>
   <wsdl:message name="getCongSuat_PM1_GT11SoapIn">
@@ -745,6 +1068,144 @@
   <wsdl:message name="getCeMSVT2_Temp_S2SoapOut">
     <wsdl:part name="parameters" element="tns:getCeMSVT2_Temp_S2Response" />
   </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_GT31SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_PM3_GT31" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_GT31SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_PM3_GT31Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_GT32SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_PM3_GT32" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_GT32SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_PM3_GT32Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_ST33SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_PM3_ST33" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_ST33SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_PM3_ST33Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM22_TOTALSoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_PM22_TOTAL" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM22_TOTALSoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_PM22_TOTALResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT1SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT1" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT1SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT1Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT2SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT2" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT2SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT2Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT3SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT3" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT3SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT3Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT4SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT4" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT4SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT4Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT5SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT5" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT5SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT5Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT6SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT6" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT6SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT6Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT7SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT7" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT7SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT7Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT8SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT8" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT8SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_GT8Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_ST9SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_ST9" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_ST9SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_ST9Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_ST10SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_ST10" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_ST10SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_BR_ST10Response" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_LHSoapIn">
+    <wsdl:part name="parameters" element="tns:getGAS_LH" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_LHSoapOut">
+    <wsdl:part name="parameters" element="tns:getGAS_LHResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_DCSoapIn">
+    <wsdl:part name="parameters" element="tns:getGAS_DC" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_DCSoapOut">
+    <wsdl:part name="parameters" element="tns:getGAS_DCResponse" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_DC_FLOWSoapIn">
+    <wsdl:part name="parameters" element="tns:getGAS_DC_FLOW" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_DC_FLOWSoapOut">
+    <wsdl:part name="parameters" element="tns:getGAS_DC_FLOWResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_S1SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_TB1_S1" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_S1SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_TB1_S1Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_S2SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_TB1_S2" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_S2SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_TB1_S2Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_NGAYSoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_TB1_NGAY" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_NGAYSoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_TB1_NGAYResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_S1SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_VT4_S1" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_S1SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_VT4_S1Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_S2SoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_VT4_S2" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_S2SoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_VT4_S2Response" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_NGAYSoapIn">
+    <wsdl:part name="parameters" element="tns:getCongSuat_VT4_NGAY" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_NGAYSoapOut">
+    <wsdl:part name="parameters" element="tns:getCongSuat_VT4_NGAYResponse" />
+  </wsdl:message>
   <wsdl:message name="getCongSuat_PM1_GT11HttpGetIn">
     <wsdl:part name="id" type="s:string" />
   </wsdl:message>
@@ -966,6 +1427,144 @@
   </wsdl:message>
   <wsdl:message name="getCeMSVT2_Temp_S2HttpGetOut">
     <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_GT31HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_GT31HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_GT32HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_GT32HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_ST33HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_ST33HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM22_TOTALHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM22_TOTALHttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT1HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT1HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT2HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT2HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT3HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT3HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT4HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT4HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT5HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT5HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT6HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT6HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT7HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT7HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT8HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT8HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_ST9HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_ST9HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_ST10HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_ST10HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_LHHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_LHHttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_DCHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_DCHttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_DC_FLOWHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_DC_FLOWHttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_S1HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_S1HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_S2HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_S2HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_NGAYHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_NGAYHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_S1HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_S1HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_S2HttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_S2HttpGetOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_NGAYHttpGetIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_NGAYHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
   </wsdl:message>
   <wsdl:message name="getCongSuat_PM1_GT11HttpPostIn">
     <wsdl:part name="id" type="s:string" />
@@ -1189,6 +1788,144 @@
   <wsdl:message name="getCeMSVT2_Temp_S2HttpPostOut">
     <wsdl:part name="Body" element="tns:double" />
   </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_GT31HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_GT31HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_GT32HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_GT32HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_ST33HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM3_ST33HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM22_TOTALHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_PM22_TOTALHttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT1HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT1HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT2HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT2HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT3HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT3HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT4HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT4HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT5HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT5HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT6HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT6HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT7HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT7HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT8HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_GT8HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_ST9HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_ST9HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_ST10HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_BR_ST10HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_LHHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_LHHttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_DCHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_DCHttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_DC_FLOWHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getGAS_DC_FLOWHttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_S1HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_S1HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_S2HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_S2HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_NGAYHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_TB1_NGAYHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_S1HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_S1HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_S2HttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_S2HttpPostOut">
+    <wsdl:part name="Body" element="tns:double" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_NGAYHttpPostIn">
+    <wsdl:part name="id" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getCongSuat_VT4_NGAYHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceGISSoap">
     <wsdl:operation name="getCongSuat_PM1_GT11">
       <wsdl:input message="tns:getCongSuat_PM1_GT11SoapIn" />
@@ -1337,6 +2074,98 @@
     <wsdl:operation name="getCeMSVT2_Temp_S2">
       <wsdl:input message="tns:getCeMSVT2_Temp_S2SoapIn" />
       <wsdl:output message="tns:getCeMSVT2_Temp_S2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_GT31">
+      <wsdl:input message="tns:getCongSuat_PM3_GT31SoapIn" />
+      <wsdl:output message="tns:getCongSuat_PM3_GT31SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_GT32">
+      <wsdl:input message="tns:getCongSuat_PM3_GT32SoapIn" />
+      <wsdl:output message="tns:getCongSuat_PM3_GT32SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_ST33">
+      <wsdl:input message="tns:getCongSuat_PM3_ST33SoapIn" />
+      <wsdl:output message="tns:getCongSuat_PM3_ST33SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM22_TOTAL">
+      <wsdl:input message="tns:getCongSuat_PM22_TOTALSoapIn" />
+      <wsdl:output message="tns:getCongSuat_PM22_TOTALSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT1">
+      <wsdl:input message="tns:getCongSuat_BR_GT1SoapIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT2">
+      <wsdl:input message="tns:getCongSuat_BR_GT2SoapIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT3">
+      <wsdl:input message="tns:getCongSuat_BR_GT3SoapIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT4">
+      <wsdl:input message="tns:getCongSuat_BR_GT4SoapIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT4SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT5">
+      <wsdl:input message="tns:getCongSuat_BR_GT5SoapIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT5SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT6">
+      <wsdl:input message="tns:getCongSuat_BR_GT6SoapIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT6SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT7">
+      <wsdl:input message="tns:getCongSuat_BR_GT7SoapIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT7SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT8">
+      <wsdl:input message="tns:getCongSuat_BR_GT8SoapIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT8SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_ST9">
+      <wsdl:input message="tns:getCongSuat_BR_ST9SoapIn" />
+      <wsdl:output message="tns:getCongSuat_BR_ST9SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_ST10">
+      <wsdl:input message="tns:getCongSuat_BR_ST10SoapIn" />
+      <wsdl:output message="tns:getCongSuat_BR_ST10SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_LH">
+      <wsdl:input message="tns:getGAS_LHSoapIn" />
+      <wsdl:output message="tns:getGAS_LHSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_DC">
+      <wsdl:input message="tns:getGAS_DCSoapIn" />
+      <wsdl:output message="tns:getGAS_DCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_DC_FLOW">
+      <wsdl:input message="tns:getGAS_DC_FLOWSoapIn" />
+      <wsdl:output message="tns:getGAS_DC_FLOWSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_S1">
+      <wsdl:input message="tns:getCongSuat_TB1_S1SoapIn" />
+      <wsdl:output message="tns:getCongSuat_TB1_S1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_S2">
+      <wsdl:input message="tns:getCongSuat_TB1_S2SoapIn" />
+      <wsdl:output message="tns:getCongSuat_TB1_S2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_NGAY">
+      <wsdl:input message="tns:getCongSuat_TB1_NGAYSoapIn" />
+      <wsdl:output message="tns:getCongSuat_TB1_NGAYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_S1">
+      <wsdl:input message="tns:getCongSuat_VT4_S1SoapIn" />
+      <wsdl:output message="tns:getCongSuat_VT4_S1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_S2">
+      <wsdl:input message="tns:getCongSuat_VT4_S2SoapIn" />
+      <wsdl:output message="tns:getCongSuat_VT4_S2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_NGAY">
+      <wsdl:input message="tns:getCongSuat_VT4_NGAYSoapIn" />
+      <wsdl:output message="tns:getCongSuat_VT4_NGAYSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="WebServiceGISHttpGet">
@@ -1488,6 +2317,98 @@
       <wsdl:input message="tns:getCeMSVT2_Temp_S2HttpGetIn" />
       <wsdl:output message="tns:getCeMSVT2_Temp_S2HttpGetOut" />
     </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_GT31">
+      <wsdl:input message="tns:getCongSuat_PM3_GT31HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_PM3_GT31HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_GT32">
+      <wsdl:input message="tns:getCongSuat_PM3_GT32HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_PM3_GT32HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_ST33">
+      <wsdl:input message="tns:getCongSuat_PM3_ST33HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_PM3_ST33HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM22_TOTAL">
+      <wsdl:input message="tns:getCongSuat_PM22_TOTALHttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_PM22_TOTALHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT1">
+      <wsdl:input message="tns:getCongSuat_BR_GT1HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT2">
+      <wsdl:input message="tns:getCongSuat_BR_GT2HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT3">
+      <wsdl:input message="tns:getCongSuat_BR_GT3HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT3HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT4">
+      <wsdl:input message="tns:getCongSuat_BR_GT4HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT4HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT5">
+      <wsdl:input message="tns:getCongSuat_BR_GT5HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT5HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT6">
+      <wsdl:input message="tns:getCongSuat_BR_GT6HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT6HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT7">
+      <wsdl:input message="tns:getCongSuat_BR_GT7HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT7HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT8">
+      <wsdl:input message="tns:getCongSuat_BR_GT8HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT8HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_ST9">
+      <wsdl:input message="tns:getCongSuat_BR_ST9HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_BR_ST9HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_ST10">
+      <wsdl:input message="tns:getCongSuat_BR_ST10HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_BR_ST10HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_LH">
+      <wsdl:input message="tns:getGAS_LHHttpGetIn" />
+      <wsdl:output message="tns:getGAS_LHHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_DC">
+      <wsdl:input message="tns:getGAS_DCHttpGetIn" />
+      <wsdl:output message="tns:getGAS_DCHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_DC_FLOW">
+      <wsdl:input message="tns:getGAS_DC_FLOWHttpGetIn" />
+      <wsdl:output message="tns:getGAS_DC_FLOWHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_S1">
+      <wsdl:input message="tns:getCongSuat_TB1_S1HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_TB1_S1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_S2">
+      <wsdl:input message="tns:getCongSuat_TB1_S2HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_TB1_S2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_NGAY">
+      <wsdl:input message="tns:getCongSuat_TB1_NGAYHttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_TB1_NGAYHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_S1">
+      <wsdl:input message="tns:getCongSuat_VT4_S1HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_VT4_S1HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_S2">
+      <wsdl:input message="tns:getCongSuat_VT4_S2HttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_VT4_S2HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_NGAY">
+      <wsdl:input message="tns:getCongSuat_VT4_NGAYHttpGetIn" />
+      <wsdl:output message="tns:getCongSuat_VT4_NGAYHttpGetOut" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType name="WebServiceGISHttpPost">
     <wsdl:operation name="getCongSuat_PM1_GT11">
@@ -1637,6 +2558,98 @@
     <wsdl:operation name="getCeMSVT2_Temp_S2">
       <wsdl:input message="tns:getCeMSVT2_Temp_S2HttpPostIn" />
       <wsdl:output message="tns:getCeMSVT2_Temp_S2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_GT31">
+      <wsdl:input message="tns:getCongSuat_PM3_GT31HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_PM3_GT31HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_GT32">
+      <wsdl:input message="tns:getCongSuat_PM3_GT32HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_PM3_GT32HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_ST33">
+      <wsdl:input message="tns:getCongSuat_PM3_ST33HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_PM3_ST33HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM22_TOTAL">
+      <wsdl:input message="tns:getCongSuat_PM22_TOTALHttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_PM22_TOTALHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT1">
+      <wsdl:input message="tns:getCongSuat_BR_GT1HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT2">
+      <wsdl:input message="tns:getCongSuat_BR_GT2HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT3">
+      <wsdl:input message="tns:getCongSuat_BR_GT3HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT3HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT4">
+      <wsdl:input message="tns:getCongSuat_BR_GT4HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT4HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT5">
+      <wsdl:input message="tns:getCongSuat_BR_GT5HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT5HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT6">
+      <wsdl:input message="tns:getCongSuat_BR_GT6HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT6HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT7">
+      <wsdl:input message="tns:getCongSuat_BR_GT7HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT7HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT8">
+      <wsdl:input message="tns:getCongSuat_BR_GT8HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_BR_GT8HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_ST9">
+      <wsdl:input message="tns:getCongSuat_BR_ST9HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_BR_ST9HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_ST10">
+      <wsdl:input message="tns:getCongSuat_BR_ST10HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_BR_ST10HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_LH">
+      <wsdl:input message="tns:getGAS_LHHttpPostIn" />
+      <wsdl:output message="tns:getGAS_LHHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_DC">
+      <wsdl:input message="tns:getGAS_DCHttpPostIn" />
+      <wsdl:output message="tns:getGAS_DCHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_DC_FLOW">
+      <wsdl:input message="tns:getGAS_DC_FLOWHttpPostIn" />
+      <wsdl:output message="tns:getGAS_DC_FLOWHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_S1">
+      <wsdl:input message="tns:getCongSuat_TB1_S1HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_TB1_S1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_S2">
+      <wsdl:input message="tns:getCongSuat_TB1_S2HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_TB1_S2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_NGAY">
+      <wsdl:input message="tns:getCongSuat_TB1_NGAYHttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_TB1_NGAYHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_S1">
+      <wsdl:input message="tns:getCongSuat_VT4_S1HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_VT4_S1HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_S2">
+      <wsdl:input message="tns:getCongSuat_VT4_S2HttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_VT4_S2HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_NGAY">
+      <wsdl:input message="tns:getCongSuat_VT4_NGAYHttpPostIn" />
+      <wsdl:output message="tns:getCongSuat_VT4_NGAYHttpPostOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceGISSoap" type="tns:WebServiceGISSoap">
@@ -1967,6 +2980,213 @@
     </wsdl:operation>
     <wsdl:operation name="getCeMSVT2_Temp_S2">
       <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCeMSVT2_Temp_S2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_GT31">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_PM3_GT31" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_GT32">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_PM3_GT32" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_ST33">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_PM3_ST33" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM22_TOTAL">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_PM22_TOTAL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT1">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT2">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT3">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT4">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT4" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT5">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT5" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT6">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT6" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT7">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT7" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT8">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT8" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_ST9">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_ST9" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_ST10">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_ST10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_LH">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getGAS_LH" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_DC">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getGAS_DC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_DC_FLOW">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getGAS_DC_FLOW" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_S1">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_TB1_S1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_S2">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_TB1_S2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_NGAY">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_TB1_NGAY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_S1">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_VT4_S1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_S2">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_VT4_S2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_NGAY">
+      <soap:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_VT4_NGAY" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -2310,6 +3530,213 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_GT31">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_PM3_GT31" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_GT32">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_PM3_GT32" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_ST33">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_PM3_ST33" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM22_TOTAL">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_PM22_TOTAL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT1">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT2">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT3">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT4">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT4" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT5">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT5" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT6">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT6" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT7">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT7" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT8">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT8" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_ST9">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_ST9" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_ST10">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_ST10" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_LH">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getGAS_LH" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_DC">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getGAS_DC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_DC_FLOW">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getGAS_DC_FLOW" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_S1">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_TB1_S1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_S2">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_TB1_S2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_NGAY">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_TB1_NGAY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_S1">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_VT4_S1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_S2">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_VT4_S2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_NGAY">
+      <soap12:operation soapAction="http://localhost/WebServiceGIS.asmx/getCongSuat_VT4_NGAY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceGISHttpGet" type="tns:WebServiceGISHttpGet">
     <http:binding verb="GET" />
@@ -2646,6 +4073,213 @@
         <mime:mimeXml part="Body" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_GT31">
+      <http:operation location="/getCongSuat_PM3_GT31" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_GT32">
+      <http:operation location="/getCongSuat_PM3_GT32" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_ST33">
+      <http:operation location="/getCongSuat_PM3_ST33" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM22_TOTAL">
+      <http:operation location="/getCongSuat_PM22_TOTAL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT1">
+      <http:operation location="/getCongSuat_BR_GT1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT2">
+      <http:operation location="/getCongSuat_BR_GT2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT3">
+      <http:operation location="/getCongSuat_BR_GT3" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT4">
+      <http:operation location="/getCongSuat_BR_GT4" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT5">
+      <http:operation location="/getCongSuat_BR_GT5" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT6">
+      <http:operation location="/getCongSuat_BR_GT6" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT7">
+      <http:operation location="/getCongSuat_BR_GT7" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT8">
+      <http:operation location="/getCongSuat_BR_GT8" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_ST9">
+      <http:operation location="/getCongSuat_BR_ST9" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_ST10">
+      <http:operation location="/getCongSuat_BR_ST10" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_LH">
+      <http:operation location="/getGAS_LH" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_DC">
+      <http:operation location="/getGAS_DC" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_DC_FLOW">
+      <http:operation location="/getGAS_DC_FLOW" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_S1">
+      <http:operation location="/getCongSuat_TB1_S1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_S2">
+      <http:operation location="/getCongSuat_TB1_S2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_NGAY">
+      <http:operation location="/getCongSuat_TB1_NGAY" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_S1">
+      <http:operation location="/getCongSuat_VT4_S1" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_S2">
+      <http:operation location="/getCongSuat_VT4_S2" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_NGAY">
+      <http:operation location="/getCongSuat_VT4_NGAY" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceGISHttpPost" type="tns:WebServiceGISHttpPost">
     <http:binding verb="POST" />
@@ -2975,6 +4609,213 @@
     </wsdl:operation>
     <wsdl:operation name="getCeMSVT2_Temp_S2">
       <http:operation location="/getCeMSVT2_Temp_S2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_GT31">
+      <http:operation location="/getCongSuat_PM3_GT31" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_GT32">
+      <http:operation location="/getCongSuat_PM3_GT32" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM3_ST33">
+      <http:operation location="/getCongSuat_PM3_ST33" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_PM22_TOTAL">
+      <http:operation location="/getCongSuat_PM22_TOTAL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT1">
+      <http:operation location="/getCongSuat_BR_GT1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT2">
+      <http:operation location="/getCongSuat_BR_GT2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT3">
+      <http:operation location="/getCongSuat_BR_GT3" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT4">
+      <http:operation location="/getCongSuat_BR_GT4" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT5">
+      <http:operation location="/getCongSuat_BR_GT5" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT6">
+      <http:operation location="/getCongSuat_BR_GT6" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT7">
+      <http:operation location="/getCongSuat_BR_GT7" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_GT8">
+      <http:operation location="/getCongSuat_BR_GT8" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_ST9">
+      <http:operation location="/getCongSuat_BR_ST9" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_BR_ST10">
+      <http:operation location="/getCongSuat_BR_ST10" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_LH">
+      <http:operation location="/getGAS_LH" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_DC">
+      <http:operation location="/getGAS_DC" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGAS_DC_FLOW">
+      <http:operation location="/getGAS_DC_FLOW" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_S1">
+      <http:operation location="/getCongSuat_TB1_S1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_S2">
+      <http:operation location="/getCongSuat_TB1_S2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_TB1_NGAY">
+      <http:operation location="/getCongSuat_TB1_NGAY" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_S1">
+      <http:operation location="/getCongSuat_VT4_S1" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_S2">
+      <http:operation location="/getCongSuat_VT4_S2" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCongSuat_VT4_NGAY">
+      <http:operation location="/getCongSuat_VT4_NGAY" />
       <wsdl:input>
         <mime:content type="application/x-www-form-urlencoded" />
       </wsdl:input>

@@ -284,6 +284,56 @@
             }
         }
 
+        public double GetPhuMy22_Total()
+        {
+            try
+            {
+                var result = context.getCongSuat_PM22_TOTAL(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public double GetCongSuat_PM3_GT31()
+        {
+            try
+            {
+                var result = context.getCongSuat_PM3_GT31(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_PM3_GT32()
+        {
+            try
+            {
+                var result = context.getCongSuat_PM3_GT32(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_PM3_ST33()
+        {
+            try
+            {
+                var result = context.getCongSuat_PM3_ST33(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
         /// <summary>
         /// The GetPhuMy4_GT41
         /// </summary>
@@ -402,5 +452,202 @@
                 throw e;
             }
         }
+
+        public double GetCongSuat_BK_H2()
+        {
+            try
+            {
+                var result = context.getCongSuat_BK_H2(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_BR_GT1()
+        {
+            try
+            {
+                var result = context.getCongSuat_BR_GT1(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_BR_GT2()
+        {
+            try
+            {
+                var result = context.getCongSuat_BR_GT2(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_BR_GT3()
+        {
+            try
+            {
+                var result = context.getCongSuat_BR_GT3(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_BR_GT4()
+        {
+            try
+            {
+                var result = context.getCongSuat_BR_GT4(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_BR_GT5()
+        {
+            try
+            {
+                var result = context.getCongSuat_BR_GT5(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_BR_GT6()
+        {
+            try
+            {
+                var result = context.getCongSuat_BR_GT6(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_BR_GT7()
+        {
+            try
+            {
+                var result = context.getCongSuat_BR_GT7(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_BR_GT8()
+        {
+            try
+            {
+                var result = context.getCongSuat_BR_GT8(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_BR_ST10()
+        {
+            try
+            {
+                var result = context.getCongSuat_BR_ST10(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_BR_ST9()
+        {
+            try
+            {
+                var result = context.getCongSuat_BR_ST9(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public double GetCongSuat_TB1_S1()
+        {
+            try
+            {
+                var result = context.getCongSuat_TB1_S1(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_TB1_S2()
+        {
+            try
+            {
+                var result = context.getCongSuat_TB1_S2(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public string GetCongSuat_VT4_NGAY()
+        {
+            try
+            {
+                var result = context.getCongSuat_VT4_NGAY(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_VT4_S1()
+        {
+            try
+            {
+                var result = context.getCongSuat_VT4_S1(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public double GetCongSuat_VT4_S2()
+        {
+            try
+            {
+                var result = context.getCongSuat_VT4_S2(Constant.ID);
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
     }
 }

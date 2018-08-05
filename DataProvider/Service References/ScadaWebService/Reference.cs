@@ -273,6 +273,167 @@ namespace DataProvider.ScadaWebService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCeMSVT2_Temp_S2", ReplyAction="*")]
         System.Threading.Tasks.Task<double> getCeMSVT2_Temp_S2Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_PM3_GT31", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_PM3_GT31(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_PM3_GT31", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_PM3_GT31Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_PM3_GT32", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_PM3_GT32(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_PM3_GT32", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_PM3_GT32Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_PM3_ST33", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_PM3_ST33(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_PM3_ST33", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_PM3_ST33Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_PM22_TOTAL", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_PM22_TOTAL(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_PM22_TOTAL", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_PM22_TOTALAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT1", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_BR_GT1(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT1", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_BR_GT1Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT2", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_BR_GT2(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT2", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_BR_GT2Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT3", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_BR_GT3(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT3", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_BR_GT3Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT4", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_BR_GT4(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT4", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_BR_GT4Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT5", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_BR_GT5(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT5", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_BR_GT5Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT6", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_BR_GT6(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT6", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_BR_GT6Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT7", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_BR_GT7(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT7", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_BR_GT7Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT8", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_BR_GT8(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_GT8", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_BR_GT8Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_ST9", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_BR_ST9(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_ST9", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_BR_ST9Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_ST10", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_BR_ST10(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_BR_ST10", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_BR_ST10Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getGAS_LH", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getGAS_LH(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getGAS_LH", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getGAS_LHAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getGAS_DC", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getGAS_DC(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getGAS_DC", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getGAS_DCAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getGAS_DC_FLOW", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getGAS_DC_FLOW(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getGAS_DC_FLOW", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getGAS_DC_FLOWAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_TB1_S1", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_TB1_S1(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_TB1_S1", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_TB1_S1Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_TB1_S2", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_TB1_S2(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_TB1_S2", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_TB1_S2Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_TB1_NGAY", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string getCongSuat_TB1_NGAY(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_TB1_NGAY", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> getCongSuat_TB1_NGAYAsync(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_VT4_S1", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_VT4_S1(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_VT4_S1", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_VT4_S1Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_VT4_S2", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        double getCongSuat_VT4_S2(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_VT4_S2", ReplyAction="*")]
+        System.Threading.Tasks.Task<double> getCongSuat_VT4_S2Async(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_VT4_NGAY", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        string getCongSuat_VT4_NGAY(string id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://localhost/WebServiceGIS.asmx/getCongSuat_VT4_NGAY", ReplyAction="*")]
+        System.Threading.Tasks.Task<string> getCongSuat_VT4_NGAYAsync(string id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -596,6 +757,190 @@ namespace DataProvider.ScadaWebService {
         
         public System.Threading.Tasks.Task<double> getCeMSVT2_Temp_S2Async(string id) {
             return base.Channel.getCeMSVT2_Temp_S2Async(id);
+        }
+        
+        public double getCongSuat_PM3_GT31(string id) {
+            return base.Channel.getCongSuat_PM3_GT31(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_PM3_GT31Async(string id) {
+            return base.Channel.getCongSuat_PM3_GT31Async(id);
+        }
+        
+        public double getCongSuat_PM3_GT32(string id) {
+            return base.Channel.getCongSuat_PM3_GT32(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_PM3_GT32Async(string id) {
+            return base.Channel.getCongSuat_PM3_GT32Async(id);
+        }
+        
+        public double getCongSuat_PM3_ST33(string id) {
+            return base.Channel.getCongSuat_PM3_ST33(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_PM3_ST33Async(string id) {
+            return base.Channel.getCongSuat_PM3_ST33Async(id);
+        }
+        
+        public double getCongSuat_PM22_TOTAL(string id) {
+            return base.Channel.getCongSuat_PM22_TOTAL(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_PM22_TOTALAsync(string id) {
+            return base.Channel.getCongSuat_PM22_TOTALAsync(id);
+        }
+        
+        public double getCongSuat_BR_GT1(string id) {
+            return base.Channel.getCongSuat_BR_GT1(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_BR_GT1Async(string id) {
+            return base.Channel.getCongSuat_BR_GT1Async(id);
+        }
+        
+        public double getCongSuat_BR_GT2(string id) {
+            return base.Channel.getCongSuat_BR_GT2(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_BR_GT2Async(string id) {
+            return base.Channel.getCongSuat_BR_GT2Async(id);
+        }
+        
+        public double getCongSuat_BR_GT3(string id) {
+            return base.Channel.getCongSuat_BR_GT3(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_BR_GT3Async(string id) {
+            return base.Channel.getCongSuat_BR_GT3Async(id);
+        }
+        
+        public double getCongSuat_BR_GT4(string id) {
+            return base.Channel.getCongSuat_BR_GT4(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_BR_GT4Async(string id) {
+            return base.Channel.getCongSuat_BR_GT4Async(id);
+        }
+        
+        public double getCongSuat_BR_GT5(string id) {
+            return base.Channel.getCongSuat_BR_GT5(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_BR_GT5Async(string id) {
+            return base.Channel.getCongSuat_BR_GT5Async(id);
+        }
+        
+        public double getCongSuat_BR_GT6(string id) {
+            return base.Channel.getCongSuat_BR_GT6(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_BR_GT6Async(string id) {
+            return base.Channel.getCongSuat_BR_GT6Async(id);
+        }
+        
+        public double getCongSuat_BR_GT7(string id) {
+            return base.Channel.getCongSuat_BR_GT7(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_BR_GT7Async(string id) {
+            return base.Channel.getCongSuat_BR_GT7Async(id);
+        }
+        
+        public double getCongSuat_BR_GT8(string id) {
+            return base.Channel.getCongSuat_BR_GT8(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_BR_GT8Async(string id) {
+            return base.Channel.getCongSuat_BR_GT8Async(id);
+        }
+        
+        public double getCongSuat_BR_ST9(string id) {
+            return base.Channel.getCongSuat_BR_ST9(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_BR_ST9Async(string id) {
+            return base.Channel.getCongSuat_BR_ST9Async(id);
+        }
+        
+        public double getCongSuat_BR_ST10(string id) {
+            return base.Channel.getCongSuat_BR_ST10(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_BR_ST10Async(string id) {
+            return base.Channel.getCongSuat_BR_ST10Async(id);
+        }
+        
+        public double getGAS_LH(string id) {
+            return base.Channel.getGAS_LH(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getGAS_LHAsync(string id) {
+            return base.Channel.getGAS_LHAsync(id);
+        }
+        
+        public double getGAS_DC(string id) {
+            return base.Channel.getGAS_DC(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getGAS_DCAsync(string id) {
+            return base.Channel.getGAS_DCAsync(id);
+        }
+        
+        public double getGAS_DC_FLOW(string id) {
+            return base.Channel.getGAS_DC_FLOW(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getGAS_DC_FLOWAsync(string id) {
+            return base.Channel.getGAS_DC_FLOWAsync(id);
+        }
+        
+        public double getCongSuat_TB1_S1(string id) {
+            return base.Channel.getCongSuat_TB1_S1(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_TB1_S1Async(string id) {
+            return base.Channel.getCongSuat_TB1_S1Async(id);
+        }
+        
+        public double getCongSuat_TB1_S2(string id) {
+            return base.Channel.getCongSuat_TB1_S2(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_TB1_S2Async(string id) {
+            return base.Channel.getCongSuat_TB1_S2Async(id);
+        }
+        
+        public string getCongSuat_TB1_NGAY(string id) {
+            return base.Channel.getCongSuat_TB1_NGAY(id);
+        }
+        
+        public System.Threading.Tasks.Task<string> getCongSuat_TB1_NGAYAsync(string id) {
+            return base.Channel.getCongSuat_TB1_NGAYAsync(id);
+        }
+        
+        public double getCongSuat_VT4_S1(string id) {
+            return base.Channel.getCongSuat_VT4_S1(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_VT4_S1Async(string id) {
+            return base.Channel.getCongSuat_VT4_S1Async(id);
+        }
+        
+        public double getCongSuat_VT4_S2(string id) {
+            return base.Channel.getCongSuat_VT4_S2(id);
+        }
+        
+        public System.Threading.Tasks.Task<double> getCongSuat_VT4_S2Async(string id) {
+            return base.Channel.getCongSuat_VT4_S2Async(id);
+        }
+        
+        public string getCongSuat_VT4_NGAY(string id) {
+            return base.Channel.getCongSuat_VT4_NGAY(id);
+        }
+        
+        public System.Threading.Tasks.Task<string> getCongSuat_VT4_NGAYAsync(string id) {
+            return base.Channel.getCongSuat_VT4_NGAYAsync(id);
         }
     }
 }
