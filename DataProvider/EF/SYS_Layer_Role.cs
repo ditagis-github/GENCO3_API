@@ -23,5 +23,6 @@ namespace DataProvider.EF
         public Nullable<bool> IsCreate { get; set; }
         public string OutFields { get; set; }
         public string Definition { get; set; }
+        public Nullable<bool> IsVisible { get; set; }
     }
 }

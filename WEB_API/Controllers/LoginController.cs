@@ -7,7 +7,7 @@ using System.Web.Http;
 using DataProvider;
 using DataProvider.EF;
 using WebAPI.Models;
-
+using DataProvider.SystemManagement;
 
 namespace Web_API.Controllers
 {
@@ -53,6 +53,13 @@ namespace Web_API.Controllers
             {
                 var tokenValidator = new TokenValidationHandler();
                 string token = tokenValidator.CreateToken(loginRequest.Username);
+                var loggerDB = new LoggerCapabilityDB();
+                loggerDB.Create(new SYS_Logger_Capability
+                {
+                    TacVu= "Truy cập Quản lý tài khoản",
+                    ThoiGian=DateTime.Now,
+                    Username = login.Username
+                });
                 //return the token
                 return Request.CreateResponse(HttpStatusCode.OK, token);
             }

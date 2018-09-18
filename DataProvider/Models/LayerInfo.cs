@@ -15,6 +15,7 @@ namespace DataProvider.Models
         public Boolean IsCreate { get; set; }
         public Boolean IsDelete { get; set; }
         public Boolean IsEdit { get; set; }
+        public Boolean IsVisible { get; set; }
         public string OutFields { get; set; }
         public string Definition { get; set; }
         public string Url { get; set; }

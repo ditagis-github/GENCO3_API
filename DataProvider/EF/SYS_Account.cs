@@ -27,6 +27,7 @@ namespace DataProvider.EF
         public Nullable<System.DateTime> DateCreate { get; set; }
         public Nullable<System.DateTime> Expired { get; set; }
         public Nullable<bool> Status { get; set; }
+        public string Role { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SYS_Layer_Account> SYS_Layer_Account { get; set; }
