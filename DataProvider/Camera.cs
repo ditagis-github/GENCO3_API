@@ -22,12 +22,12 @@ namespace DataProvider
                 case "10.156.8.138":
                 case "10.156.8.139":
                 case "10.156.8.128":
-                    return cameraIP + "/jpeg";
+                    return "http://" + cameraIP + "/jpeg";
                 case "10.156.8.143":
                 case "10.156.8.145":
-                    return cameraIP + "/cgi-bin/mjpeg?resolution=640x360&quality=5&page="+this.GetTimeStamp();
+                    return "http://" + cameraIP + "/cgi-bin/mjpeg?resolution=640x360&quality=5&page=" + this.GetTimeStamp();
                 case "10.156.8.140":
-                    return cameraIP+ "/cgi-bin/viewer/video.jpg?streamid=2&resolution=1024x768&quality=5";
+                    return "http://" + cameraIP + "/cgi-bin/viewer/video.jpg?streamid=2&resolution=1024x768&quality=5";
                 default:
                     return "/public/images/error-camera.jpg";
             }
