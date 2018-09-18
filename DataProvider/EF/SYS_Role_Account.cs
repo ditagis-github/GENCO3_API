@@ -15,7 +15,7 @@ namespace DataProvider.EF
     public partial class SYS_Role_Account
     {
         public long ID { get; set; }
-        public Nullable<long> Account { get; set; }
+        public string Account { get; set; }
         public string Role { get; set; }
     }
 }

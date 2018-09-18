@@ -12,15 +12,9 @@ namespace DataProvider.EF
     using System;
     using System.Collections.Generic;
     
-    public partial class SYS_Account
+    public partial class SYS_GroupRole
     {
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string DisplayName { get; set; }
-        public Nullable<long> UserCreate { get; set; }
-        public Nullable<System.DateTime> DateCreate { get; set; }
-        public Nullable<System.DateTime> Expired { get; set; }
-        public Nullable<bool> Status { get; set; }
-        public string Role { get; set; }
+        public string ID { get; set; }
+        public string Name { get; set; }
     }
 }

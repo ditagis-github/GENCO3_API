@@ -14,8 +14,7 @@ namespace DataProvider.EF
     
     public partial class SYS_GroupLayer
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
         public string ID { get; set; }
+        public string Name { get; set; }
     }
 }

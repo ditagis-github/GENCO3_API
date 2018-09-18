@@ -56,6 +56,9 @@
     <Compile Include="Camera.cs" />
     <Compile Include="CongSuatNhaMayDAO.cs" />
     <Compile Include="Constant.cs" />
+    <Compile Include="EF\SYS_GroupRole.cs">
+      <DependentUpon>SystemModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Helper.cs" />
     <Compile Include="IAction.cs" />
     <Compile Include="Models\AccountModel.cs" />

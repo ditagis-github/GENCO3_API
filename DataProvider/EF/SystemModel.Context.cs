@@ -26,12 +26,13 @@ namespace DataProvider.EF
         }
     
         public virtual DbSet<SYS_Account> SYS_Account { get; set; }
-        public virtual DbSet<SYS_Layer> SYS_Layer { get; set; }
-        public virtual DbSet<SYS_Layer_Account> SYS_Layer_Account { get; set; }
         public virtual DbSet<SYS_Capability> SYS_Capability { get; set; }
         public virtual DbSet<SYS_Capability_Account> SYS_Capability_Account { get; set; }
         public virtual DbSet<SYS_Capability_Role> SYS_Capability_Role { get; set; }
         public virtual DbSet<SYS_GroupLayer> SYS_GroupLayer { get; set; }
+        public virtual DbSet<SYS_GroupRole> SYS_GroupRole { get; set; }
+        public virtual DbSet<SYS_Layer> SYS_Layer { get; set; }
+        public virtual DbSet<SYS_Layer_Account> SYS_Layer_Account { get; set; }
         public virtual DbSet<SYS_Layer_Role> SYS_Layer_Role { get; set; }
         public virtual DbSet<SYS_Logger_Capability> SYS_Logger_Capability { get; set; }
         public virtual DbSet<SYS_Logger_Layer> SYS_Logger_Layer { get; set; }

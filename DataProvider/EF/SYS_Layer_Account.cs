@@ -24,8 +24,5 @@ namespace DataProvider.EF
         public string OutFields { get; set; }
         public string Definition { get; set; }
         public Nullable<bool> IsVisible { get; set; }
-    
-        public virtual SYS_Account SYS_Account { get; set; }
-        public virtual SYS_Layer SYS_Layer { get; set; }
     }
 }

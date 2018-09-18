@@ -19,7 +19,7 @@ namespace DataProvider
                 {
                     var query = from la in context.SYS_Layer_Account
                                 join lyr in context.SYS_Layer on la.Layer equals lyr.ID
-                                join gr in context.SYS_GroupLayer on lyr.GroupID equals gr.Id into igr
+                                join gr in context.SYS_GroupLayer on lyr.GroupID equals gr.ID into igr
                                 from gr in igr.DefaultIfEmpty()
                                 where la.Account == account.Username
                                 orderby lyr.NumericalOder
@@ -35,7 +35,7 @@ namespace DataProvider
                                     Definition = String.IsNullOrEmpty(la.Definition)?null:la.Definition.Replace("\"","'"),
                                     Url = lyr.Url,
                                     OutFields = la.OutFields,
-                                    GroupID = gr.Id,
+                                    GroupID = gr.ID,
                                     GroupName = gr.Name
                                 };
 

@@ -14,8 +14,8 @@ namespace DataProvider.EF
     
     public partial class SYS_Capability_Account
     {
-        public int ID { get; set; }
-        public long Account { get; set; }
+        public long ID { get; set; }
+        public string Account { get; set; }
         public string Capability { get; set; }
         public Nullable<bool> IsPrimary { get; set; }
     }
