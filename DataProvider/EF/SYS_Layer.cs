@@ -14,10 +14,26 @@ namespace DataProvider.EF
     
     public partial class SYS_Layer
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SYS_Layer()
+        {
+            this.SYS_Layer_Account = new HashSet<SYS_Layer_Account>();
+            this.SYS_Layer_Role = new HashSet<SYS_Layer_Role>();
+            this.SYS_Logger_Layer = new HashSet<SYS_Logger_Layer>();
+        }
+    
         public string ID { get; set; }
         public string Title { get; set; }
         public string Url { get; set; }
         public string GroupID { get; set; }
         public Nullable<int> NumericalOder { get; set; }
+    
+        public virtual SYS_GroupLayer SYS_GroupLayer { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SYS_Layer_Account> SYS_Layer_Account { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SYS_Layer_Role> SYS_Layer_Role { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SYS_Logger_Layer> SYS_Logger_Layer { get; set; }
     }
 }

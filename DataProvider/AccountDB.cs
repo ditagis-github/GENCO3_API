@@ -31,7 +31,6 @@ namespace DataProvider
                                     IsCreate = la.IsCreate.HasValue?la.IsCreate.Value:false,
                                     IsDelete = la.IsDelete.HasValue?la.IsDelete.Value:false,
                                     IsEdit = la.IsEdit.HasValue?la.IsEdit.Value:false,
-                                    IsVisible = la.IsVisible.HasValue ? la.IsVisible.Value : false,
                                     Definition = String.IsNullOrEmpty(la.Definition)?null:la.Definition.Replace("\"","'"),
                                     Url = lyr.Url,
                                     OutFields = la.OutFields,

@@ -13,10 +13,10 @@
           <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="DisplayName" Type="nvarchar" MaxLength="50" />
           <Property Name="UserCreate" Type="bigint" />
-          <Property Name="DateCreate" Type="datetime" />
+          <Property Name="DateCreate" Type="datetime" Nullable="false" />
           <Property Name="Expired" Type="datetime" />
           <Property Name="Status" Type="bit" />
-          <Property Name="Role" Type="varchar" MaxLength="10" />
+          <Property Name="Role" Type="varchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="SYS_Capability">
           <Key>
@@ -32,7 +32,6 @@
           <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Account" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="Capability" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="IsPrimary" Type="bit" />
         </EntityType>
         <EntityType Name="SYS_Capability_Role">
           <Key>
@@ -41,7 +40,6 @@
           <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Role" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="Capability" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="IsPrimary" Type="bit" />
         </EntityType>
         <EntityType Name="SYS_GroupLayer">
           <Key>
@@ -80,7 +78,8 @@
           <Property Name="IsView" Type="bit" />
           <Property Name="OutFields" Type="varchar" MaxLength="1000" />
           <Property Name="Definition" Type="varchar" MaxLength="1000" />
-          <Property Name="IsVisible" Type="bit" />
+          <Property Name="QueryFields" Type="varchar" MaxLength="1000" />
+          <Property Name="UpdateFields" Type="varchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="SYS_Layer_Role">
           <Key>
@@ -95,7 +94,8 @@
           <Property Name="IsCreate" Type="bit" />
           <Property Name="OutFields" Type="varchar" MaxLength="1000" />
           <Property Name="Definition" Type="varchar" MaxLength="1000" />
-          <Property Name="IsVisible" Type="bit" />
+          <Property Name="QueryFields" Type="varchar" MaxLength="1000" />
+          <Property Name="UpdateFields" Type="varchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="SYS_Logger_Capability">
           <Key>
@@ -125,14 +125,166 @@
           <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="GroupRole" Type="varchar" MaxLength="10" />
         </EntityType>
-        <EntityType Name="SYS_Role_Account">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Account" Type="varchar" MaxLength="255" />
-          <Property Name="Role" Type="varchar" MaxLength="10" />
-        </EntityType>
+        <Association Name="FK_SYS_Account_SYS_Role">
+          <End Role="SYS_Role" Type="Self.SYS_Role" Multiplicity="1" />
+          <End Role="SYS_Account" Type="Self.SYS_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Account">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Capability_Account_SYS_Capability">
+          <End Role="SYS_Capability" Type="Self.SYS_Capability" Multiplicity="1" />
+          <End Role="SYS_Capability_Account" Type="Self.SYS_Capability_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Capability">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Capability_Account">
+              <PropertyRef Name="Capability" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Capability_Account_SYS_Capability_Account">
+          <End Role="SYS_Account" Type="Self.SYS_Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SYS_Capability_Account" Type="Self.SYS_Capability_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="SYS_Capability_Account">
+              <PropertyRef Name="Account" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Capability_Role_SYS_Capability">
+          <End Role="SYS_Capability" Type="Self.SYS_Capability" Multiplicity="1" />
+          <End Role="SYS_Capability_Role" Type="Self.SYS_Capability_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Capability">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Capability_Role">
+              <PropertyRef Name="Capability" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Capability_Role_SYS_Role">
+          <End Role="SYS_Role" Type="Self.SYS_Role" Multiplicity="1" />
+          <End Role="SYS_Capability_Role" Type="Self.SYS_Capability_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Capability_Role">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Layer_Account_SYS_Account">
+          <End Role="SYS_Account" Type="Self.SYS_Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="SYS_Layer_Account" Type="Self.SYS_Layer_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="SYS_Layer_Account">
+              <PropertyRef Name="Account" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Layer_Account_SYS_Layer">
+          <End Role="SYS_Layer" Type="Self.SYS_Layer" Multiplicity="1" />
+          <End Role="SYS_Layer_Account" Type="Self.SYS_Layer_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Layer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Layer_Account">
+              <PropertyRef Name="Layer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Layer_Role_SYS_Layer">
+          <End Role="SYS_Layer" Type="Self.SYS_Layer" Multiplicity="1" />
+          <End Role="SYS_Layer_Role" Type="Self.SYS_Layer_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Layer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Layer_Role">
+              <PropertyRef Name="Layer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Layer_Role_SYS_Role">
+          <End Role="SYS_Role" Type="Self.SYS_Role" Multiplicity="1" />
+          <End Role="SYS_Layer_Role" Type="Self.SYS_Layer_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Layer_Role">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Layer_SYS_GroupLayer">
+          <End Role="SYS_GroupLayer" Type="Self.SYS_GroupLayer" Multiplicity="0..1" />
+          <End Role="SYS_Layer" Type="Self.SYS_Layer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_GroupLayer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Layer">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Logger_Capability_SYS_Account">
+          <End Role="SYS_Account" Type="Self.SYS_Account" Multiplicity="1" />
+          <End Role="SYS_Logger_Capability" Type="Self.SYS_Logger_Capability" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="SYS_Logger_Capability">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Logger_Layer_SYS_Layer">
+          <End Role="SYS_Layer" Type="Self.SYS_Layer" Multiplicity="0..1" />
+          <End Role="SYS_Logger_Layer" Type="Self.SYS_Logger_Layer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Layer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Logger_Layer">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Role_SYS_GroupRole">
+          <End Role="SYS_GroupRole" Type="Self.SYS_GroupRole" Multiplicity="0..1" />
+          <End Role="SYS_Role" Type="Self.SYS_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_GroupRole">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Role">
+              <PropertyRef Name="GroupRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="Genco3_SystemModelStoreContainer">
           <EntitySet Name="SYS_Account" EntityType="Self.SYS_Account" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SYS_Capability" EntityType="Self.SYS_Capability" Schema="dbo" store:Type="Tables" />
@@ -146,7 +298,58 @@
           <EntitySet Name="SYS_Logger_Capability" EntityType="Self.SYS_Logger_Capability" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SYS_Logger_Layer" EntityType="Self.SYS_Logger_Layer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SYS_Role" EntityType="Self.SYS_Role" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="SYS_Role_Account" EntityType="Self.SYS_Role_Account" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_SYS_Account_SYS_Role" Association="Self.FK_SYS_Account_SYS_Role">
+            <End Role="SYS_Role" EntitySet="SYS_Role" />
+            <End Role="SYS_Account" EntitySet="SYS_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Capability_Account_SYS_Capability" Association="Self.FK_SYS_Capability_Account_SYS_Capability">
+            <End Role="SYS_Capability" EntitySet="SYS_Capability" />
+            <End Role="SYS_Capability_Account" EntitySet="SYS_Capability_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Capability_Account_SYS_Capability_Account" Association="Self.FK_SYS_Capability_Account_SYS_Capability_Account">
+            <End Role="SYS_Account" EntitySet="SYS_Account" />
+            <End Role="SYS_Capability_Account" EntitySet="SYS_Capability_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Capability_Role_SYS_Capability" Association="Self.FK_SYS_Capability_Role_SYS_Capability">
+            <End Role="SYS_Capability" EntitySet="SYS_Capability" />
+            <End Role="SYS_Capability_Role" EntitySet="SYS_Capability_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Capability_Role_SYS_Role" Association="Self.FK_SYS_Capability_Role_SYS_Role">
+            <End Role="SYS_Role" EntitySet="SYS_Role" />
+            <End Role="SYS_Capability_Role" EntitySet="SYS_Capability_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Layer_Account_SYS_Account" Association="Self.FK_SYS_Layer_Account_SYS_Account">
+            <End Role="SYS_Account" EntitySet="SYS_Account" />
+            <End Role="SYS_Layer_Account" EntitySet="SYS_Layer_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Layer_Account_SYS_Layer" Association="Self.FK_SYS_Layer_Account_SYS_Layer">
+            <End Role="SYS_Layer" EntitySet="SYS_Layer" />
+            <End Role="SYS_Layer_Account" EntitySet="SYS_Layer_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Layer_Role_SYS_Layer" Association="Self.FK_SYS_Layer_Role_SYS_Layer">
+            <End Role="SYS_Layer" EntitySet="SYS_Layer" />
+            <End Role="SYS_Layer_Role" EntitySet="SYS_Layer_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Layer_Role_SYS_Role" Association="Self.FK_SYS_Layer_Role_SYS_Role">
+            <End Role="SYS_Role" EntitySet="SYS_Role" />
+            <End Role="SYS_Layer_Role" EntitySet="SYS_Layer_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Layer_SYS_GroupLayer" Association="Self.FK_SYS_Layer_SYS_GroupLayer">
+            <End Role="SYS_GroupLayer" EntitySet="SYS_GroupLayer" />
+            <End Role="SYS_Layer" EntitySet="SYS_Layer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Logger_Capability_SYS_Account" Association="Self.FK_SYS_Logger_Capability_SYS_Account">
+            <End Role="SYS_Account" EntitySet="SYS_Account" />
+            <End Role="SYS_Logger_Capability" EntitySet="SYS_Logger_Capability" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Logger_Layer_SYS_Layer" Association="Self.FK_SYS_Logger_Layer_SYS_Layer">
+            <End Role="SYS_Layer" EntitySet="SYS_Layer" />
+            <End Role="SYS_Logger_Layer" EntitySet="SYS_Logger_Layer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Role_SYS_GroupRole" Association="Self.FK_SYS_Role_SYS_GroupRole">
+            <End Role="SYS_GroupRole" EntitySet="SYS_GroupRole" />
+            <End Role="SYS_Role" EntitySet="SYS_Role" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -159,13 +362,64 @@
           <EntitySet Name="SYS_Capability_Role" EntityType="Genco3_SystemModel.SYS_Capability_Role" />
           <EntitySet Name="SYS_GroupLayer" EntityType="Genco3_SystemModel.SYS_GroupLayer" />
           <EntitySet Name="SYS_GroupRole" EntityType="Genco3_SystemModel.SYS_GroupRole" />
-          <EntitySet Name="SYS_Layer" EntityType="Genco3_SystemModel.SYS_Layer" />
           <EntitySet Name="SYS_Layer_Account" EntityType="Genco3_SystemModel.SYS_Layer_Account" />
           <EntitySet Name="SYS_Layer_Role" EntityType="Genco3_SystemModel.SYS_Layer_Role" />
           <EntitySet Name="SYS_Logger_Capability" EntityType="Genco3_SystemModel.SYS_Logger_Capability" />
           <EntitySet Name="SYS_Logger_Layer" EntityType="Genco3_SystemModel.SYS_Logger_Layer" />
           <EntitySet Name="SYS_Role" EntityType="Genco3_SystemModel.SYS_Role" />
-          <EntitySet Name="SYS_Role_Account" EntityType="Genco3_SystemModel.SYS_Role_Account" />
+          <AssociationSet Name="FK_SYS_Account_SYS_Role" Association="Genco3_SystemModel.FK_SYS_Account_SYS_Role">
+            <End Role="SYS_Role" EntitySet="SYS_Role" />
+            <End Role="SYS_Account" EntitySet="SYS_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Capability_Account_SYS_Capability_Account" Association="Genco3_SystemModel.FK_SYS_Capability_Account_SYS_Capability_Account">
+            <End Role="SYS_Account" EntitySet="SYS_Account" />
+            <End Role="SYS_Capability_Account" EntitySet="SYS_Capability_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Layer_Account_SYS_Account" Association="Genco3_SystemModel.FK_SYS_Layer_Account_SYS_Account">
+            <End Role="SYS_Account" EntitySet="SYS_Account" />
+            <End Role="SYS_Layer_Account" EntitySet="SYS_Layer_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Logger_Capability_SYS_Account" Association="Genco3_SystemModel.FK_SYS_Logger_Capability_SYS_Account">
+            <End Role="SYS_Account" EntitySet="SYS_Account" />
+            <End Role="SYS_Logger_Capability" EntitySet="SYS_Logger_Capability" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Capability_Account_SYS_Capability" Association="Genco3_SystemModel.FK_SYS_Capability_Account_SYS_Capability">
+            <End Role="SYS_Capability" EntitySet="SYS_Capability" />
+            <End Role="SYS_Capability_Account" EntitySet="SYS_Capability_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Capability_Role_SYS_Capability" Association="Genco3_SystemModel.FK_SYS_Capability_Role_SYS_Capability">
+            <End Role="SYS_Capability" EntitySet="SYS_Capability" />
+            <End Role="SYS_Capability_Role" EntitySet="SYS_Capability_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Capability_Role_SYS_Role" Association="Genco3_SystemModel.FK_SYS_Capability_Role_SYS_Role">
+            <End Role="SYS_Role" EntitySet="SYS_Role" />
+            <End Role="SYS_Capability_Role" EntitySet="SYS_Capability_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Role_SYS_GroupRole" Association="Genco3_SystemModel.FK_SYS_Role_SYS_GroupRole">
+            <End Role="SYS_GroupRole" EntitySet="SYS_GroupRole" />
+            <End Role="SYS_Role" EntitySet="SYS_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Layer_Role_SYS_Role" Association="Genco3_SystemModel.FK_SYS_Layer_Role_SYS_Role">
+            <End Role="SYS_Role" EntitySet="SYS_Role" />
+            <End Role="SYS_Layer_Role" EntitySet="SYS_Layer_Role" />
+          </AssociationSet>
+          <EntitySet Name="SYS_Layer" EntityType="Genco3_SystemModel.SYS_Layer" />
+          <AssociationSet Name="FK_SYS_Layer_SYS_GroupLayer" Association="Genco3_SystemModel.FK_SYS_Layer_SYS_GroupLayer">
+            <End Role="SYS_GroupLayer" EntitySet="SYS_GroupLayer" />
+            <End Role="SYS_Layer" EntitySet="SYS_Layer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Layer_Account_SYS_Layer" Association="Genco3_SystemModel.FK_SYS_Layer_Account_SYS_Layer">
+            <End Role="SYS_Layer" EntitySet="SYS_Layer" />
+            <End Role="SYS_Layer_Account" EntitySet="SYS_Layer_Account" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Layer_Role_SYS_Layer" Association="Genco3_SystemModel.FK_SYS_Layer_Role_SYS_Layer">
+            <End Role="SYS_Layer" EntitySet="SYS_Layer" />
+            <End Role="SYS_Layer_Role" EntitySet="SYS_Layer_Role" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SYS_Logger_Layer_SYS_Layer" Association="Genco3_SystemModel.FK_SYS_Logger_Layer_SYS_Layer">
+            <End Role="SYS_Layer" EntitySet="SYS_Layer" />
+            <End Role="SYS_Logger_Layer" EntitySet="SYS_Logger_Layer" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="SYS_Account">
           <Key>
@@ -175,10 +429,14 @@
           <Property Name="Password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="DisplayName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="UserCreate" Type="Int64" />
-          <Property Name="DateCreate" Type="DateTime" Precision="3" />
+          <Property Name="DateCreate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Expired" Type="DateTime" Precision="3" />
           <Property Name="Status" Type="Boolean" />
-          <Property Name="Role" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Role" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SYS_Role" Relationship="Genco3_SystemModel.FK_SYS_Account_SYS_Role" FromRole="SYS_Account" ToRole="SYS_Role" />
+          <NavigationProperty Name="SYS_Capability_Account" Relationship="Genco3_SystemModel.FK_SYS_Capability_Account_SYS_Capability_Account" FromRole="SYS_Account" ToRole="SYS_Capability_Account" />
+          <NavigationProperty Name="SYS_Layer_Account" Relationship="Genco3_SystemModel.FK_SYS_Layer_Account_SYS_Account" FromRole="SYS_Account" ToRole="SYS_Layer_Account" />
+          <NavigationProperty Name="SYS_Logger_Capability" Relationship="Genco3_SystemModel.FK_SYS_Logger_Capability_SYS_Account" FromRole="SYS_Account" ToRole="SYS_Logger_Capability" />
         </EntityType>
         <EntityType Name="SYS_Capability">
           <Key>
@@ -186,6 +444,8 @@
           </Key>
           <Property Name="ID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SYS_Capability_Account" Relationship="Genco3_SystemModel.FK_SYS_Capability_Account_SYS_Capability" FromRole="SYS_Capability" ToRole="SYS_Capability_Account" />
+          <NavigationProperty Name="SYS_Capability_Role" Relationship="Genco3_SystemModel.FK_SYS_Capability_Role_SYS_Capability" FromRole="SYS_Capability" ToRole="SYS_Capability_Role" />
         </EntityType>
         <EntityType Name="SYS_Capability_Account">
           <Key>
@@ -194,7 +454,8 @@
           <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Account" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="Capability" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IsPrimary" Type="Boolean" />
+          <NavigationProperty Name="SYS_Account" Relationship="Genco3_SystemModel.FK_SYS_Capability_Account_SYS_Capability_Account" FromRole="SYS_Capability_Account" ToRole="SYS_Account" />
+          <NavigationProperty Name="SYS_Capability" Relationship="Genco3_SystemModel.FK_SYS_Capability_Account_SYS_Capability" FromRole="SYS_Capability_Account" ToRole="SYS_Capability" />
         </EntityType>
         <EntityType Name="SYS_Capability_Role">
           <Key>
@@ -203,7 +464,8 @@
           <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Role" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Capability" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="IsPrimary" Type="Boolean" />
+          <NavigationProperty Name="SYS_Capability" Relationship="Genco3_SystemModel.FK_SYS_Capability_Role_SYS_Capability" FromRole="SYS_Capability_Role" ToRole="SYS_Capability" />
+          <NavigationProperty Name="SYS_Role" Relationship="Genco3_SystemModel.FK_SYS_Capability_Role_SYS_Role" FromRole="SYS_Capability_Role" ToRole="SYS_Role" />
         </EntityType>
         <EntityType Name="SYS_GroupLayer">
           <Key>
@@ -211,6 +473,7 @@
           </Key>
           <Property Name="ID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SYS_Layer" Relationship="Genco3_SystemModel.FK_SYS_Layer_SYS_GroupLayer" FromRole="SYS_GroupLayer" ToRole="SYS_Layer" />
         </EntityType>
         <EntityType Name="SYS_GroupRole">
           <Key>
@@ -218,16 +481,7 @@
           </Key>
           <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Name" Type="String" MaxLength="155" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="SYS_Layer">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
-          <Property Name="Url" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="GroupID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="NumericalOder" Type="Int32" />
+          <NavigationProperty Name="SYS_Role" Relationship="Genco3_SystemModel.FK_SYS_Role_SYS_GroupRole" FromRole="SYS_GroupRole" ToRole="SYS_Role" />
         </EntityType>
         <EntityType Name="SYS_Layer_Account">
           <Key>
@@ -242,7 +496,10 @@
           <Property Name="IsView" Type="Boolean" />
           <Property Name="OutFields" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="Definition" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="IsVisible" Type="Boolean" />
+          <Property Name="QueryFields" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="UpdateFields" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SYS_Account" Relationship="Genco3_SystemModel.FK_SYS_Layer_Account_SYS_Account" FromRole="SYS_Layer_Account" ToRole="SYS_Account" />
+          <NavigationProperty Name="SYS_Layer" Relationship="Genco3_SystemModel.FK_SYS_Layer_Account_SYS_Layer" FromRole="SYS_Layer_Account" ToRole="SYS_Layer" />
         </EntityType>
         <EntityType Name="SYS_Layer_Role">
           <Key>
@@ -257,7 +514,10 @@
           <Property Name="IsCreate" Type="Boolean" />
           <Property Name="OutFields" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
           <Property Name="Definition" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="IsVisible" Type="Boolean" />
+          <Property Name="QueryFields" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="UpdateFields" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SYS_Role" Relationship="Genco3_SystemModel.FK_SYS_Layer_Role_SYS_Role" FromRole="SYS_Layer_Role" ToRole="SYS_Role" />
+          <NavigationProperty Name="SYS_Layer" Relationship="Genco3_SystemModel.FK_SYS_Layer_Role_SYS_Layer" FromRole="SYS_Layer_Role" ToRole="SYS_Layer" />
         </EntityType>
         <EntityType Name="SYS_Logger_Capability">
           <Key>
@@ -267,6 +527,7 @@
           <Property Name="Username" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="TacVu" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="ThoiGian" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="SYS_Account" Relationship="Genco3_SystemModel.FK_SYS_Logger_Capability_SYS_Account" FromRole="SYS_Logger_Capability" ToRole="SYS_Account" />
         </EntityType>
         <EntityType Name="SYS_Logger_Layer">
           <Key>
@@ -278,6 +539,7 @@
           <Property Name="ThuocTinh" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="ThoiGian" Type="DateTime" Precision="7" />
           <Property Name="Username" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SYS_Layer" Relationship="Genco3_SystemModel.FK_SYS_Logger_Layer_SYS_Layer" FromRole="SYS_Logger_Layer" ToRole="SYS_Layer" />
         </EntityType>
         <EntityType Name="SYS_Role">
           <Key>
@@ -286,16 +548,186 @@
           <Property Name="ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="GroupRole" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SYS_Account" Relationship="Genco3_SystemModel.FK_SYS_Account_SYS_Role" FromRole="SYS_Role" ToRole="SYS_Account" />
+          <NavigationProperty Name="SYS_Capability_Role" Relationship="Genco3_SystemModel.FK_SYS_Capability_Role_SYS_Role" FromRole="SYS_Role" ToRole="SYS_Capability_Role" />
+          <NavigationProperty Name="SYS_GroupRole" Relationship="Genco3_SystemModel.FK_SYS_Role_SYS_GroupRole" FromRole="SYS_Role" ToRole="SYS_GroupRole" />
+          <NavigationProperty Name="SYS_Layer_Role" Relationship="Genco3_SystemModel.FK_SYS_Layer_Role_SYS_Role" FromRole="SYS_Role" ToRole="SYS_Layer_Role" />
         </EntityType>
-        <EntityType Name="SYS_Role_Account">
+        <Association Name="FK_SYS_Account_SYS_Role">
+          <End Type="Genco3_SystemModel.SYS_Role" Role="SYS_Role" Multiplicity="1" />
+          <End Type="Genco3_SystemModel.SYS_Account" Role="SYS_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Account">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Capability_Account_SYS_Capability_Account">
+          <End Type="Genco3_SystemModel.SYS_Account" Role="SYS_Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Genco3_SystemModel.SYS_Capability_Account" Role="SYS_Capability_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="SYS_Capability_Account">
+              <PropertyRef Name="Account" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Layer_Account_SYS_Account">
+          <End Type="Genco3_SystemModel.SYS_Account" Role="SYS_Account" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="Genco3_SystemModel.SYS_Layer_Account" Role="SYS_Layer_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="SYS_Layer_Account">
+              <PropertyRef Name="Account" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Logger_Capability_SYS_Account">
+          <End Type="Genco3_SystemModel.SYS_Account" Role="SYS_Account" Multiplicity="1" />
+          <End Type="Genco3_SystemModel.SYS_Logger_Capability" Role="SYS_Logger_Capability" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Account">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="SYS_Logger_Capability">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Capability_Account_SYS_Capability">
+          <End Type="Genco3_SystemModel.SYS_Capability" Role="SYS_Capability" Multiplicity="1" />
+          <End Type="Genco3_SystemModel.SYS_Capability_Account" Role="SYS_Capability_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Capability">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Capability_Account">
+              <PropertyRef Name="Capability" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Capability_Role_SYS_Capability">
+          <End Type="Genco3_SystemModel.SYS_Capability" Role="SYS_Capability" Multiplicity="1" />
+          <End Type="Genco3_SystemModel.SYS_Capability_Role" Role="SYS_Capability_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Capability">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Capability_Role">
+              <PropertyRef Name="Capability" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Capability_Role_SYS_Role">
+          <End Type="Genco3_SystemModel.SYS_Role" Role="SYS_Role" Multiplicity="1" />
+          <End Type="Genco3_SystemModel.SYS_Capability_Role" Role="SYS_Capability_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Capability_Role">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Role_SYS_GroupRole">
+          <End Type="Genco3_SystemModel.SYS_GroupRole" Role="SYS_GroupRole" Multiplicity="0..1" />
+          <End Type="Genco3_SystemModel.SYS_Role" Role="SYS_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_GroupRole">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Role">
+              <PropertyRef Name="GroupRole" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Layer_Role_SYS_Role">
+          <End Type="Genco3_SystemModel.SYS_Role" Role="SYS_Role" Multiplicity="1" />
+          <End Type="Genco3_SystemModel.SYS_Layer_Role" Role="SYS_Layer_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Role">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Layer_Role">
+              <PropertyRef Name="Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SYS_Layer">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Account" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Role" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="GroupID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="NumericalOder" Type="Int32" />
+          <NavigationProperty Name="SYS_GroupLayer" Relationship="Genco3_SystemModel.FK_SYS_Layer_SYS_GroupLayer" FromRole="SYS_Layer" ToRole="SYS_GroupLayer" />
+          <NavigationProperty Name="SYS_Layer_Account" Relationship="Genco3_SystemModel.FK_SYS_Layer_Account_SYS_Layer" FromRole="SYS_Layer" ToRole="SYS_Layer_Account" />
+          <NavigationProperty Name="SYS_Layer_Role" Relationship="Genco3_SystemModel.FK_SYS_Layer_Role_SYS_Layer" FromRole="SYS_Layer" ToRole="SYS_Layer_Role" />
+          <NavigationProperty Name="SYS_Logger_Layer" Relationship="Genco3_SystemModel.FK_SYS_Logger_Layer_SYS_Layer" FromRole="SYS_Layer" ToRole="SYS_Logger_Layer" />
         </EntityType>
-      </Schema>
+        <Association Name="FK_SYS_Layer_SYS_GroupLayer">
+          <End Type="Genco3_SystemModel.SYS_GroupLayer" Role="SYS_GroupLayer" Multiplicity="0..1" />
+          <End Type="Genco3_SystemModel.SYS_Layer" Role="SYS_Layer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_GroupLayer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Layer">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Layer_Account_SYS_Layer">
+          <End Type="Genco3_SystemModel.SYS_Layer" Role="SYS_Layer" Multiplicity="1" />
+          <End Type="Genco3_SystemModel.SYS_Layer_Account" Role="SYS_Layer_Account" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Layer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Layer_Account">
+              <PropertyRef Name="Layer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Layer_Role_SYS_Layer">
+          <End Type="Genco3_SystemModel.SYS_Layer" Role="SYS_Layer" Multiplicity="1" />
+          <End Type="Genco3_SystemModel.SYS_Layer_Role" Role="SYS_Layer_Role" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Layer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Layer_Role">
+              <PropertyRef Name="Layer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SYS_Logger_Layer_SYS_Layer">
+          <End Type="Genco3_SystemModel.SYS_Layer" Role="SYS_Layer" Multiplicity="0..1" />
+          <End Type="Genco3_SystemModel.SYS_Logger_Layer" Role="SYS_Logger_Layer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SYS_Layer">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SYS_Logger_Layer">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -326,7 +758,6 @@
           <EntitySetMapping Name="SYS_Capability_Account">
             <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Capability_Account">
               <MappingFragment StoreEntitySet="SYS_Capability_Account">
-                <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
                 <ScalarProperty Name="Capability" ColumnName="Capability" />
                 <ScalarProperty Name="Account" ColumnName="Account" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -336,7 +767,6 @@
           <EntitySetMapping Name="SYS_Capability_Role">
             <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Capability_Role">
               <MappingFragment StoreEntitySet="SYS_Capability_Role">
-                <ScalarProperty Name="IsPrimary" ColumnName="IsPrimary" />
                 <ScalarProperty Name="Capability" ColumnName="Capability" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
@@ -359,21 +789,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SYS_Layer">
-            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Layer">
-              <MappingFragment StoreEntitySet="SYS_Layer">
-                <ScalarProperty Name="NumericalOder" ColumnName="NumericalOder" />
-                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
-                <ScalarProperty Name="Url" ColumnName="Url" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SYS_Layer_Account">
             <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Layer_Account">
               <MappingFragment StoreEntitySet="SYS_Layer_Account">
-                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="UpdateFields" ColumnName="UpdateFields" />
+                <ScalarProperty Name="QueryFields" ColumnName="QueryFields" />
                 <ScalarProperty Name="Definition" ColumnName="Definition" />
                 <ScalarProperty Name="OutFields" ColumnName="OutFields" />
                 <ScalarProperty Name="IsView" ColumnName="IsView" />
@@ -389,7 +809,8 @@
           <EntitySetMapping Name="SYS_Layer_Role">
             <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Layer_Role">
               <MappingFragment StoreEntitySet="SYS_Layer_Role">
-                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+                <ScalarProperty Name="UpdateFields" ColumnName="UpdateFields" />
+                <ScalarProperty Name="QueryFields" ColumnName="QueryFields" />
                 <ScalarProperty Name="Definition" ColumnName="Definition" />
                 <ScalarProperty Name="OutFields" ColumnName="OutFields" />
                 <ScalarProperty Name="IsCreate" ColumnName="IsCreate" />
@@ -433,11 +854,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SYS_Role_Account">
-            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Role_Account">
-              <MappingFragment StoreEntitySet="SYS_Role_Account">
-                <ScalarProperty Name="Role" ColumnName="Role" />
-                <ScalarProperty Name="Account" ColumnName="Account" />
+          <EntitySetMapping Name="SYS_Layer">
+            <EntityTypeMapping TypeName="Genco3_SystemModel.SYS_Layer">
+              <MappingFragment StoreEntitySet="SYS_Layer">
+                <ScalarProperty Name="NumericalOder" ColumnName="NumericalOder" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>

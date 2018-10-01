@@ -14,7 +14,16 @@ namespace DataProvider.EF
     
     public partial class SYS_GroupLayer
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SYS_GroupLayer()
+        {
+            this.SYS_Layer = new HashSet<SYS_Layer>();
+        }
+    
         public string ID { get; set; }
         public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SYS_Layer> SYS_Layer { get; set; }
     }
 }

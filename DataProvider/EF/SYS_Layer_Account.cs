@@ -23,6 +23,10 @@ namespace DataProvider.EF
         public Nullable<bool> IsView { get; set; }
         public string OutFields { get; set; }
         public string Definition { get; set; }
-        public Nullable<bool> IsVisible { get; set; }
+        public string QueryFields { get; set; }
+        public string UpdateFields { get; set; }
+    
+        public virtual SYS_Account SYS_Account { get; set; }
+        public virtual SYS_Layer SYS_Layer { get; set; }
     }
 }

@@ -118,9 +118,6 @@
     <Compile Include="EF\SYS_Role.cs">
       <DependentUpon>SystemModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="EF\SYS_Role_Account.cs">
-      <DependentUpon>SystemModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="SystemManagement\LoggerDB.cs" />
     <Compile Include="ThongTinMoiTruongDAO.cs" />
   </ItemGroup>

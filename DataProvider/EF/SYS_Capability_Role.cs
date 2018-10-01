@@ -17,6 +17,8 @@ namespace DataProvider.EF
         public long ID { get; set; }
         public string Role { get; set; }
         public string Capability { get; set; }
-        public Nullable<bool> IsPrimary { get; set; }
+    
+        public virtual SYS_Capability SYS_Capability { get; set; }
+        public virtual SYS_Role SYS_Role { get; set; }
     }
 }

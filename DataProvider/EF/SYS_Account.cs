@@ -14,13 +14,29 @@ namespace DataProvider.EF
     
     public partial class SYS_Account
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SYS_Account()
+        {
+            this.SYS_Capability_Account = new HashSet<SYS_Capability_Account>();
+            this.SYS_Layer_Account = new HashSet<SYS_Layer_Account>();
+            this.SYS_Logger_Capability = new HashSet<SYS_Logger_Capability>();
+        }
+    
         public string Username { get; set; }
         public string Password { get; set; }
         public string DisplayName { get; set; }
         public Nullable<long> UserCreate { get; set; }
-        public Nullable<System.DateTime> DateCreate { get; set; }
+        public System.DateTime DateCreate { get; set; }
         public Nullable<System.DateTime> Expired { get; set; }
         public Nullable<bool> Status { get; set; }
         public string Role { get; set; }
+    
+        public virtual SYS_Role SYS_Role { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SYS_Capability_Account> SYS_Capability_Account { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SYS_Layer_Account> SYS_Layer_Account { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SYS_Logger_Capability> SYS_Logger_Capability { get; set; }
     }
 }

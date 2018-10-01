@@ -14,7 +14,16 @@ namespace DataProvider.EF
     
     public partial class SYS_GroupRole
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public SYS_GroupRole()
+        {
+            this.SYS_Role = new HashSet<SYS_Role>();
+        }
+    
         public string ID { get; set; }
         public string Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SYS_Role> SYS_Role { get; set; }
     }
 }

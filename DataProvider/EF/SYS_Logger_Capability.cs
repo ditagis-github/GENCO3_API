@@ -18,5 +18,7 @@ namespace DataProvider.EF
         public string Username { get; set; }
         public string TacVu { get; set; }
         public Nullable<System.DateTime> ThoiGian { get; set; }
+    
+        public virtual SYS_Account SYS_Account { get; set; }
     }
 }

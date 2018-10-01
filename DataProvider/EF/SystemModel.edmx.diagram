@@ -5,19 +5,31 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="22551d91a84f40a9b61ff4e553c52c3d" Name="Diagram1">
-        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Account" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Capability" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Capability_Account" Width="1.5" PointX="2.75" PointY="3.75" />
-        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Capability_Role" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_GroupLayer" Width="1.5" PointX="4.75" PointY="3.75" />
-        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_GroupRole" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Layer" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Layer_Account" Width="1.5" PointX="2.75" PointY="6.75" />
-        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Layer_Role" Width="1.5" PointX="6.75" PointY="3.75" />
-        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Logger_Capability" Width="1.5" PointX="4.75" PointY="7.75" />
-        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Logger_Layer" Width="1.5" PointX="6.75" PointY="7.75" />
-        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Role" Width="1.5" PointX="8.75" PointY="0.75" />
-        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Role_Account" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Account" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Capability" Width="1.5" PointX="7.75" PointY="11.5" />
+        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Capability_Account" Width="1.5" PointX="11" PointY="6.25" />
+        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Capability_Role" Width="1.5" PointX="10" PointY="9.5" />
+        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_GroupLayer" Width="1.5" PointX="0.75" PointY="6" />
+        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_GroupRole" Width="1.5" PointX="1.5" PointY="10" />
+        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Layer_Account" Width="1.5" PointX="5.25" PointY="5" />
+        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Layer_Role" Width="1.5" PointX="8.25" PointY="5" />
+        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Logger_Capability" Width="1.5" PointX="5.25" PointY="1.875" />
+        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Logger_Layer" Width="1.5" PointX="5.25" PointY="14.125" />
+        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Role" Width="1.5" PointX="0.75" PointY="1.625" />
+        <AssociationConnector Association="Genco3_SystemModel.FK_SYS_Account_SYS_Role" />
+        <AssociationConnector Association="Genco3_SystemModel.FK_SYS_Capability_Account_SYS_Capability_Account" />
+        <AssociationConnector Association="Genco3_SystemModel.FK_SYS_Layer_Account_SYS_Account" />
+        <AssociationConnector Association="Genco3_SystemModel.FK_SYS_Logger_Capability_SYS_Account" />
+        <AssociationConnector Association="Genco3_SystemModel.FK_SYS_Capability_Account_SYS_Capability" />
+        <AssociationConnector Association="Genco3_SystemModel.FK_SYS_Capability_Role_SYS_Capability" />
+        <AssociationConnector Association="Genco3_SystemModel.FK_SYS_Capability_Role_SYS_Role" />
+        <AssociationConnector Association="Genco3_SystemModel.FK_SYS_Role_SYS_GroupRole" />
+        <AssociationConnector Association="Genco3_SystemModel.FK_SYS_Layer_Role_SYS_Role" />
+        <EntityTypeShape EntityType="Genco3_SystemModel.SYS_Layer" Width="1.5" PointX="3" PointY="5.375" />
+        <AssociationConnector Association="Genco3_SystemModel.FK_SYS_Layer_SYS_GroupLayer" />
+        <AssociationConnector Association="Genco3_SystemModel.FK_SYS_Layer_Account_SYS_Layer" />
+        <AssociationConnector Association="Genco3_SystemModel.FK_SYS_Layer_Role_SYS_Layer" />
+        <AssociationConnector Association="Genco3_SystemModel.FK_SYS_Logger_Layer_SYS_Layer" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

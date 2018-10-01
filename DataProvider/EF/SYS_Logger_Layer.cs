@@ -20,5 +20,7 @@ namespace DataProvider.EF
         public string ThuocTinh { get; set; }
         public Nullable<System.DateTime> ThoiGian { get; set; }
         public string Username { get; set; }
+    
+        public virtual SYS_Layer SYS_Layer { get; set; }
     }
 }
