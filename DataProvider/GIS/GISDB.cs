@@ -125,7 +125,9 @@ namespace DataProvider.GIS
                         shortName, tableName,maNhaMay
                         );
                     var maDoiTuong = context.Database.SqlQuery<string>(sql,new SqlParameter("maNhaMay",maNhaMay)).FirstOrDefault();
-                    return maDoiTuong;
+                    return String.IsNullOrEmpty(maDoiTuong) ?
+                        String.Format("{0}/{1}0001", maNhaMay, shortName)
+                        :maDoiTuong;
                 }
                 else
                 {
