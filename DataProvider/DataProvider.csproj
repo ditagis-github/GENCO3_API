@@ -56,9 +56,26 @@
     <Compile Include="Camera.cs" />
     <Compile Include="CongSuatNhaMayDAO.cs" />
     <Compile Include="Constant.cs" />
+    <Compile Include="Const\GISConstant.cs" />
+    <Compile Include="EF\GISModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GISModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GISModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GISModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EF\GISModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GISModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="EF\SYS_GroupRole.cs">
       <DependentUpon>SystemModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="GIS\GISDB.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="IAction.cs" />
     <Compile Include="Models\AccountModel.cs" />
@@ -126,6 +143,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <EntityDeploy Include="EF\GISModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GISModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EF\GISModel.edmx.diagram">
+      <DependentUpon>GISModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Service References\ScadaWebService\webservicegis.wsdl" />
     <EntityDeploy Include="EF\SystemModel.edmx">
@@ -155,6 +179,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EF\GISModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GISModel.edmx</DependentUpon>
+      <LastGenOutput>GISModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="EF\GISModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GISModel.edmx</DependentUpon>
+      <LastGenOutput>GISModel.cs</LastGenOutput>
+    </Content>
     <Content Include="EF\SystemModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SystemModel.edmx</DependentUpon>
