@@ -124,10 +124,10 @@ namespace DataProvider.GIS
                     var sql = String.Format("select top 1 MaNhaMay+'/'+'{0}'+REPLACE(STR(count(MaNhaMay) + 1,4), SPACE(1), '0')  from {1} where MaNhaMay = @maNhaMay group by MaNhaMay order by MaNhaMay desc",
                         shortName, tableName,maNhaMay
                         );
-                    var maDoiTuong = context.Database.SqlQuery<string>(sql,new SqlParameter("maNhaMay",maNhaMay)).FirstOrDefault();
-                    return String.IsNullOrEmpty(maDoiTuong) ?
-                        String.Format("{0}/{1}0001", maNhaMay, shortName)
-                        :maDoiTuong;
+                    var maDoiTuong = context.Database.SqlQuery<string>(sql,new SqlParameter("maNhaMay",maNhaMay))
+                        .DefaultIfEmpty(String.Format("{0}/{1}0001", maNhaMay, shortName))
+                        .FirstOrDefault();
+                    return maDoiTuong;
                 }
                 else
                 {

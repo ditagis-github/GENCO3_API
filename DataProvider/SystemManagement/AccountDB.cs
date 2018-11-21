@@ -6,8 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using DataProvider.EF;
 using DataProvider.Models;
+using DataProvider.SystemManagement.AD;
 
-namespace DataProvider
+namespace DataProvider.SystemManagement
 {
     public class AccountDB
     {
@@ -27,11 +28,11 @@ namespace DataProvider
                                 {
                                     LayerID = lyr.ID,
                                     LayerTitle = lyr.Title,
-                                    IsView = la.IsView.HasValue?la.IsView.Value:false,
-                                    IsCreate = la.IsCreate.HasValue?la.IsCreate.Value:false,
-                                    IsDelete = la.IsDelete.HasValue?la.IsDelete.Value:false,
-                                    IsEdit = la.IsEdit.HasValue?la.IsEdit.Value:false,
-                                    Definition = String.IsNullOrEmpty(la.Definition)?null:la.Definition.Replace("\"","'"),
+                                    IsView = la.IsView.HasValue ? la.IsView.Value : false,
+                                    IsCreate = la.IsCreate.HasValue ? la.IsCreate.Value : false,
+                                    IsDelete = la.IsDelete.HasValue ? la.IsDelete.Value : false,
+                                    IsEdit = la.IsEdit.HasValue ? la.IsEdit.Value : false,
+                                    Definition = String.IsNullOrEmpty(la.Definition) ? null : la.Definition.Replace("\"", "'"),
                                     Url = lyr.Url,
                                     OutFields = la.OutFields,
                                     GroupID = gr.ID,
@@ -52,11 +53,27 @@ namespace DataProvider
             {
                 using (var context = new SystemEntities())
                 {
+                    const string LADP = @"genco3\";
+                    if (account.Username.StartsWith(LADP))
+                    {
+                        var isValid = new LoginAD().IsValid(account.Username, account.Password);
+                        if (isValid)
+                        {
+                            var userName = account.Username.Replace(LADP, String.Empty);
+                            return context.SYS_Account.FirstOrDefault(f => f.Username.Equals(userName, StringComparison.OrdinalIgnoreCase));
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+
+
                     var password = Helper.MD5.CryptoPassword(account.Password);
                     var sysAccount = context.SYS_Account.
                         FirstOrDefault(
-                        f => 
-                        f.Username.Equals(account.Username,StringComparison.OrdinalIgnoreCase)
+                        f =>
+                        f.Username.Equals(account.Username, StringComparison.OrdinalIgnoreCase)
                         && f.Password.Equals(password));
                     return sysAccount;
                 }

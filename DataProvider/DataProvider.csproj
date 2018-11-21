@@ -41,6 +41,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
@@ -52,7 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountDB.cs" />
+    <Compile Include="SystemManagement\AccountDB.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="CongSuatNhaMayDAO.cs" />
     <Compile Include="Constant.cs" />
@@ -135,6 +137,7 @@
     <Compile Include="EF\SYS_Role.cs">
       <DependentUpon>SystemModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="SystemManagement\AD\LoginAD.cs" />
     <Compile Include="SystemManagement\LoggerDB.cs" />
     <Compile Include="ThongTinMoiTruongDAO.cs" />
   </ItemGroup>
