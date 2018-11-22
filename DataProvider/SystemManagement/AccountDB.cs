@@ -54,13 +54,17 @@ namespace DataProvider.SystemManagement
                 using (var context = new SystemEntities())
                 {
                     const string LADP = @"genco3\";
-                    if (account.Username.StartsWith(LADP))
+
+                    var user = context.SYS_Account.FirstOrDefault(f => f.Username.Equals(LADP + account.Username));
+
+                    // nếu trong dữ liệu user bắt đầu bằng LADP
+                    if (user != null)
                     {
-                        var isValid = new LoginAD().IsValid(account.Username, account.Password);
+                        var userName = account.Username;
+                        var isValid = new LoginAD().IsValid(userName, account.Password);
                         if (isValid)
                         {
-                            var userName = account.Username.Replace(LADP, String.Empty);
-                            return context.SYS_Account.FirstOrDefault(f => f.Username.Equals(userName, StringComparison.OrdinalIgnoreCase));
+                            return user;
                         }
                         else
                         {

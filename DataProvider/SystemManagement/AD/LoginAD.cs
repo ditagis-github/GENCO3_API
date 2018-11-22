@@ -20,8 +20,8 @@ namespace DataProvider.SystemManagement.AD
         public bool IsValid(string username, string password)
         {
             bool kq = false;
-            string adPath = "LDAP://genco3";
-            string domainAndUsername = "genco3" + @"\" + username;
+            string adPath = "LDAP://10.144.0.5";
+            string domainAndUsername = username;
             DirectoryEntry dir = new DirectoryEntry(adPath, domainAndUsername, password);
             try
             {
