@@ -29,7 +29,8 @@ namespace DataProvider
                 case "10.156.8.140":
                     return "http://" + cameraIP + "/cgi-bin/viewer/video.jpg?streamid=2&resolution=1024x768&quality=5";
                 default:
-                    return "/public/images/error-camera.jpg";
+                    //return "/public/images/error-camera.jpg";
+                    return "http://" + cameraIP + "/jpeg";
             }
         }
 

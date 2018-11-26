@@ -11,6 +11,7 @@ using DataProvider.SystemManagement;
 
 namespace Web_API.Controllers
 {
+    [RoutePrefix("api/Login")]
     public class LoginController : ApiController
     {
         private AccountDB provider = new AccountDB();
@@ -22,6 +23,38 @@ namespace Web_API.Controllers
                 Username = Username,
                 Password = Password
             });
+        }
+
+        [HttpGet]
+        [Route("AuthSession/{sessionID}")]
+        public HttpResponseMessage AuthSession(string sessionID)
+        {
+            try
+            {
+                var user = this.provider.CheckSession(sessionID);
+                if (user != null)
+                {
+                    var tokenValidator = new TokenValidationHandler();
+                    string token = tokenValidator.CreateToken(user.Username);
+                    var loggerDB = new LoggerCapabilityDB();
+                    loggerDB.Create(new SYS_Logger_Capability
+                    {
+                        TacVu = "Truy cập Quản lý tài khoản",
+                        ThoiGian = DateTime.Now,
+                        Username = user.Username
+                    });
+                    //return the token
+                    return Request.CreateResponse(HttpStatusCode.OK, token);
+                }
+                else
+                {
+                    return Request.CreateErrorResponse(HttpStatusCode.Unauthorized, "Tài khoản hoặc mật khẩu không đúng");
+                }
+            }
+            catch (Exception e)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, e.InnerException);
+            }
         }
 
         [HttpPost]
@@ -56,8 +89,8 @@ namespace Web_API.Controllers
                 var loggerDB = new LoggerCapabilityDB();
                 loggerDB.Create(new SYS_Logger_Capability
                 {
-                    TacVu= "Truy cập Quản lý tài khoản",
-                    ThoiGian=DateTime.Now,
+                    TacVu = "Truy cập Quản lý tài khoản",
+                    ThoiGian = DateTime.Now,
                     Username = login.Username
                 });
                 //return the token

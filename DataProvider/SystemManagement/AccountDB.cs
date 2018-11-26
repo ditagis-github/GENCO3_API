@@ -12,6 +12,25 @@ namespace DataProvider.SystemManagement
 {
     public class AccountDB
     {
+        public SYS_Account CheckSession(string pSSID)
+        {
+            using (var context = new OnlinePortal())
+            {
+                var sql = "select LoginName from  TableAdUser  where LoginUserSessionId=@p0";
+                var username = context.Database.SqlQuery<string>(sql, pSSID).FirstOrDefault();
+                if(username != null)
+                {
+                    using (var systemContext = new SystemEntities())
+                    {
+                        return systemContext.SYS_Account.FirstOrDefault(f => f.Username.Equals(username));
+                    }
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
         public List<LayerInfo> LayerInfos(SYS_Account account)
         {
             try
