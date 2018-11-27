@@ -18,11 +18,11 @@ namespace DataProvider.SystemManagement
             {
                 var sql = "select LoginName from  TableAdUser  where LoginUserSessionId=@p0";
                 var username = context.Database.SqlQuery<string>(sql, pSSID).FirstOrDefault();
-                if(username != null)
+                if (username != null)
                 {
                     using (var systemContext = new SystemEntities())
                     {
-                        return systemContext.SYS_Account.FirstOrDefault(f => f.Username.Equals(username));
+                        return systemContext.SYS_Account.FirstOrDefault(f => f.Username.Equals(@"genco3\" + username));
                     }
                 }
                 else

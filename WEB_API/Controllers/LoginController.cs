@@ -53,7 +53,7 @@ namespace Web_API.Controllers
             }
             catch (Exception e)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, e.InnerException);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, e);
             }
         }
 
