@@ -12,6 +12,7 @@ namespace DataProvider.SystemManagement
 {
     public class AccountDB
     {
+        public static readonly string LADP = @"genco3\";
         public SYS_Account CheckSession(string pSSID)
         {
             using (var context = new OnlinePortal())
@@ -66,24 +67,34 @@ namespace DataProvider.SystemManagement
                 throw e;
             }
         }
+
+        public bool IsDomainAccount(string pUsername)
+        {
+            using (var context = new SystemEntities())
+            {
+                var isValid = context.SYS_Account.Any(f => f.Username.Equals(LADP + pUsername));
+                return isValid;
+            }
+        }
+
         public SYS_Account IsValid(SYS_Account account)
         {
             try
             {
                 using (var context = new SystemEntities())
                 {
-                    const string LADP = @"genco3\";
 
-                    var user = context.SYS_Account.FirstOrDefault(f => f.Username.Equals(LADP + account.Username));
+
+                    var isDomainAccount = this.IsDomainAccount(account.Username);
 
                     // nếu trong dữ liệu user bắt đầu bằng LADP
-                    if (user != null)
+                    if (isDomainAccount)
                     {
                         var userName = account.Username;
                         var isValid = new LoginAD().IsValid(userName, account.Password);
                         if (isValid)
                         {
-                            return user;
+                            return this.Get(LADP + account.Username);
                         }
                         else
                         {
@@ -104,6 +115,14 @@ namespace DataProvider.SystemManagement
             catch (Exception e)
             {
                 throw e;
+            }
+        }
+
+        public SYS_Account Get(string pUsername)
+        {
+            using (var context = new SystemEntities())
+            {
+                return context.SYS_Account.FirstOrDefault(f => f.Username.Equals(pUsername));
             }
         }
 

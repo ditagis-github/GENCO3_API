@@ -16,14 +16,14 @@ namespace Web_API.Controllers
     {
         private AccountDB provider = new AccountDB();
 
-        public HttpResponseMessage Get(string Username, string Password)
-        {
-            return this.Authenticate(new LoginRequest
-            {
-                Username = Username,
-                Password = Password
-            });
-        }
+        //public HttpResponseMessage Get(string Username, string Password)
+        //{
+        //    return this.Authenticate(new LoginRequest
+        //    {
+        //        Username = Username,
+        //        Password = Password
+        //    });
+        //}
 
         [HttpGet]
         [Route("AuthSession/{sessionID}")]
@@ -53,7 +53,7 @@ namespace Web_API.Controllers
             }
             catch (Exception e)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, e);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, e.InnerException);
             }
         }
 
@@ -67,13 +67,13 @@ namespace Web_API.Controllers
                 Password = login.Password
             };
 
-            bool isUsernamePasswordValid = false;
+            SYS_Account dbAccount = null;
 
             if (login != null)
             {
                 try
                 {
-                    isUsernamePasswordValid = provider.IsValid(loginRequest) != null;
+                    dbAccount = provider.IsValid(loginRequest);
                 }
                 catch (Exception e)
                 {
@@ -82,16 +82,17 @@ namespace Web_API.Controllers
             }
 
             // if credentials are valid
-            if (isUsernamePasswordValid)
+            if (dbAccount != null)
             {
                 var tokenValidator = new TokenValidationHandler();
-                string token = tokenValidator.CreateToken(loginRequest.Username);
+                string token = tokenValidator.CreateToken(dbAccount.Username);
                 var loggerDB = new LoggerCapabilityDB();
+
                 loggerDB.Create(new SYS_Logger_Capability
                 {
-                    TacVu = "Truy cập Quản lý tài khoản",
+                    TacVu = "Đăng nhập",
                     ThoiGian = DateTime.Now,
-                    Username = login.Username
+                    Username = dbAccount.Username
                 });
                 //return the token
                 return Request.CreateResponse(HttpStatusCode.OK, token);
